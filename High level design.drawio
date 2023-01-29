@@ -1,11 +1,134 @@
-<mxfile host="app.diagrams.net" modified="2023-01-29T08:17:08.940Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="qLEDvSxKMLJMU1-JK9KB" version="20.8.13" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-29T09:21:52.435Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="_1srR7Jq38bcpnQbjLkq" version="20.8.13" type="github">
   <diagram name="Page-1" id="jpbhyeJJprRdvk0jlRwc">
-    <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="1965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="j4mNBejZg6scu_2qzhqC-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="370" y="370" width="80" height="80" as="geometry" />
+        <mxCell id="j4mNBejZg6scu_2qzhqC-2" value="Statistics Collector" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-3" value="Statistics Predictor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-4" value="Scaling Job Creator" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-5" value="Scheduler" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60.000000000000014" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-6" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="740" y="-150" width="680" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-7" value="Sample Application 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="-90" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-8" value="Sample Application 3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="160" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-9" value="Sample Application 2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="34" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-10" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;b&gt;LABEL: HybridScaler:Horizontal&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="-20" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-11" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;b&gt;LABEL: HybridScaler:Vertical&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="220" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-15" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/database.svg;fontSize=8;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="122.71000000000004" y="730" width="94.59" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-16" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 13px;&quot;&gt;Kubernetes Cluster&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="-190" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-18" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Sample apps need to have the following:&lt;br&gt;&lt;br&gt;1. An API that can be called externally&lt;br&gt;2. Resource utilization that can increase both memory and CPU usage&lt;/font&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1310" y="-80" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-21" value="Load Simulation&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="820" y="-120" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-22" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="j4mNBejZg6scu_2qzhqC-21" target="j4mNBejZg6scu_2qzhqC-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="810" y="180" as="sourcePoint" />
+            <mxPoint x="860" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-23" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;entryX=0.013;entryY=0.69;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="j4mNBejZg6scu_2qzhqC-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="940" y="-63.67924528301887" as="sourcePoint" />
+            <mxPoint x="1145" y="-25" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-24" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;entryX=-0.006;entryY=0.482;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="j4mNBejZg6scu_2qzhqC-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="190.66075471698113" as="sourcePoint" />
+            <mxPoint x="705" y="229.34" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-25" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Will collect statistics (CPU, Memory, Scaling Type and ReplicaCount) for all pods registering interest. Collection is triggered at frequent polled interval by the scheduler&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="350" y="60" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-28" value="Scaling Job Executor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-29" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="j4mNBejZg6scu_2qzhqC-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="500" y="428.580754716981" as="sourcePoint" />
+            <mxPoint x="736" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-30" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Responsible for executing scaling jobs already previously created. The execution will involve a rolling deployment.&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="410" y="580" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-31" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;entryX=-0.008;entryY=0.617;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="j4mNBejZg6scu_2qzhqC-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="260.0007547169811" as="sourcePoint" />
+            <mxPoint x="415.9200000000001" y="131.41999999999993" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-32" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Will collect statistics (CPU, Memory, Scaling Type and ReplicaCount) for all pods registering interest. Collection is triggered at frequent polled interval by the scheduler&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="370" y="290" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-33" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Frequent intervals e.g. every minute&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="190.34" y="202.59" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-34" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.992;exitY=0.633;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="j4mNBejZg6scu_2qzhqC-5" target="j4mNBejZg6scu_2qzhqC-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="270.0007547169812" as="sourcePoint" />
+            <mxPoint x="389.03999999999996" y="207.01999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-35" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Maybe once a day (Retrospecting over the last 3 days of data)&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="280" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-36" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="j4mNBejZg6scu_2qzhqC-5" target="j4mNBejZg6scu_2qzhqC-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="452.9807547169812" as="sourcePoint" />
+            <mxPoint x="259.03999999999996" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-37" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Creates jobs based on the predicted data. Can we use ARIMA of some other AI technology here?, Or just get average of datapoints for 3 days and then add a percentage buffer.&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="70" y="600" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-38" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="j4mNBejZg6scu_2qzhqC-5" target="j4mNBejZg6scu_2qzhqC-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="174.51999999999995" y="297.98" as="sourcePoint" />
+            <mxPoint x="375.48" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-39" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Triggered when appropriate&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="470" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-40" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Same schedule as predictor but executed afterwards&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="410" width="75" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-41" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Responsible for scheduling statistic collection, prediction, scaling job creation and execution&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="60" y="120" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-42" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="20" y="50" width="690" height="790" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-43" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;All components will interact with a database (possibly redis). This is required to store statistics, jobs to execute and jobs scaled&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="230" y="730" width="200" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
