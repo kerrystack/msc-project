@@ -1,0 +1,58 @@
+Scope:
+-------
+Edge case of the pods being down when we attempt to get statistics, in this case we could try to do a redeployment - but too much work and off topic for this project in my view
+for simplicity purposes, we will keep the hybrid autoscaler pod as a singl epod
+
+Hybrid AutoScaler
+------------------
+Could be an application that is itself a pod in the same cluster
+Will have multiple applications (i.e. containers within the same pod)
+Keep it simple, single point of failure
+Have a database backend (most likely redis)
+Will use labels in pods ro
+
+
+Data Layer:
+------------
+Most likely a redis database - nice and simple and no cost.
+Performance not a factor here
+Archiving???
+
+
+Statistic
+----------
+ - Id
+ - Timestamp:date
+ - DeploymentName:string
+ - CPURequestLimit:decimal
+ - CPUResourceLimit:decimal
+ - MemoryRequestLimit:decimal
+ - MemoryResourceLimit:decimal
+ - Pods
+	- PodName:string
+ 	- CPUUsage:decimal
+	- MemoryUsage:decimal
+
+ScalingJob
+-----------
+Id: UUID
+ExecuteTimestamp:date
+Type:ScalingJobType
+PodName:string
+CurrentCPURequestLimit:decimal
+CurrentCPUResourceLimit:decimal
+CurrentRequestLimit:decimal
+CurrentMemoryResourceLimit:decimal
+CurrentReplicaCount:int
+ProposedCPURequestLimit:decimal
+ProposedCPUResourceLimit:decimal
+ProposedRequestLimit:decimal
+ProposedMemoryResourceLimit:decimal
+ProposedReplicaCount:int
+
+ScalingJobType
+---------------
+VerticalUpgrade
+VerticalDowngrade
+HorizontalUpgrade
+HorizontalDowngrade
