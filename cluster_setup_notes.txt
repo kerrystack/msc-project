@@ -1,0 +1,7 @@
+
+
+To setup terraform with AWS, i followed the following tutorial:
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-build
+
+To setup a cluster in EKS, I followed this tutorial:
+https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks
