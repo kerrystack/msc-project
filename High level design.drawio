@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-01-29T19:01:35.739Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="paPEV4PhhVhLWIQFI3HS" version="20.8.13" type="github">
+<mxfile host="app.diagrams.net" modified="2023-01-31T10:54:53.475Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="ramP3VcF6Pfk0lPK1aaK" version="20.8.13" type="github">
   <diagram name="Page-1" id="jpbhyeJJprRdvk0jlRwc">
-    <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="739" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -73,9 +73,6 @@
             <mxPoint x="1045.92" y="691.4199999999998" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="j4mNBejZg6scu_2qzhqC-32" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Will collect statistics (CPU, Memory, Scaling Type and ReplicaCount) for all pods registering interest. Collection is triggered at frequent polled interval by the scheduler&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
-          <mxGeometry x="1000" y="850" width="200" height="90" as="geometry" />
-        </mxCell>
         <mxCell id="j4mNBejZg6scu_2qzhqC-33" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Frequent intervals e.g. every minute&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0;rotation=0;" vertex="1" parent="1">
           <mxGeometry x="820.34" y="762.5899999999999" width="150" height="20" as="geometry" />
         </mxCell>
@@ -94,7 +91,7 @@
             <mxPoint x="889.04" y="950" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="j4mNBejZg6scu_2qzhqC-37" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Creates jobs based on the predicted data. Can we use ARIMA of some other AI technology here?, Or just get average of datapoints for 3 days and then add a percentage buffer.&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+        <mxCell id="j4mNBejZg6scu_2qzhqC-37" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Creates jobs based on the predicted data. Will use some algorithm here to detect changes and create jobs (dy/dx over a htreshold)&amp;nbsp;&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
           <mxGeometry x="700" y="1160" width="200" height="90" as="geometry" />
         </mxCell>
         <mxCell id="j4mNBejZg6scu_2qzhqC-38" value="" style="endArrow=classic;html=1;rounded=0;fontSize=10;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="j4mNBejZg6scu_2qzhqC-5" target="j4mNBejZg6scu_2qzhqC-28">
@@ -113,7 +110,7 @@
           <mxGeometry x="690" y="680" width="170" height="70" as="geometry" />
         </mxCell>
         <mxCell id="j4mNBejZg6scu_2qzhqC-42" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="650" y="600" width="690" height="870" as="geometry" />
+          <mxGeometry x="650" y="605" width="690" height="870" as="geometry" />
         </mxCell>
         <mxCell id="j4mNBejZg6scu_2qzhqC-43" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;All components will interact with a database (possibly redis). This is required to store statistics, jobs to execute and jobs scaled&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
           <mxGeometry x="710" y="1360" width="200" height="90" as="geometry" />
@@ -156,6 +153,9 @@
         </mxCell>
         <mxCell id="j4mNBejZg6scu_2qzhqC-54" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;The Hybrid Autoscaler will contain 6 containers within the same single pod (5 applications and a database)&amp;nbsp;&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
           <mxGeometry x="70" y="390" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="j4mNBejZg6scu_2qzhqC-56" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Can we use ARIMA of some other AI technology here?, Or just get average of datapoints for 3 days&lt;/span&gt;" style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="1010" y="840" width="200" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
