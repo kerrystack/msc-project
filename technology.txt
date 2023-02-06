@@ -1,0 +1,35 @@
+
+Technologies to write about:
+1. Container:
+
+1. Kubernetes
+Kubernetes is an open source platform for managing containerized applications. It manages containers in a virtual container ecosystem, and implements container management using primitive model concepts such as clusters, pods, nodes and deployments. Applications can natively be deployed, scaled, resourced and monitored declaratively. Kubernetes originated from Google, which was preceeded by an internal platform called Borg for managing billions of container deployments occurring every week. Kubernetes inherits many Borg concepts and also has been adapted based lessons learned from Borg in operation. Kubernetes has a highly active Kubernetes ecosystem, with numerous tools complementing and supporting various Kubernetes container operations. Kubernetes is open source hence can be run on multiple environments, e.g. on premise or cloud
+
+2. Cluster
+The basic high level environment concept for Kubernetes is a cluster. A cluster is made up of one-to-many cluster nodes, each that can house deployed containerized applications. A cluster node is in essence a virtual machine, and the specification of the virtual machine along with the number of nodes in the cluster will determine the amount of resources that are available for deployed containerized applications to consume.
+
+3. Pods
+The smallest unit of deployment in Kubernetes is a pod. A pod can have one to many containerized applications encapsulated within it. for example, if a golang microservice talks to a redis database, a pod could represent this by haveing one containerized application for the golang microservice and another for the redis database.
+
+3. Control Plane
+The control plane is management brain of the Kubernetes cluster. It manages all pods across all nodes in the cluster. The control plane consists of the following components:
+ 1. Key Value store - this is the database for all cluster related operations
+ 2. Scheduler - responsible for watching for newly created pods and selects the cluster node for the pod
+ 3. Api server - this is the api that is externally available to execute operations on the cluster. Kubectl interacts with the Api server to execute cluster operations
+ 4. Controller manager - manages controller processes. There are many types of controllers e.g job controller, responsible for managing jobs (i.e. one off tasks)
+
+4. Autoscaling
+
+	1. Node autoscaler
+	2. VPA
+	3. HPA
+
+Links:
+Kubernetes VPA
+https://www.kubecost.com/kubernetes-autoscaling/kubernetes-vpa/
+
+VPA Recommender
+https://github.com/kubernetes/autoscaler/blob/master/vertical-pod-autoscaler/pkg/recommender/README.md
+
+VPA Autoscaler
+https://github.com/kubernetes/autoscaler/blob/master/vertical-pod-autoscaler/README.md

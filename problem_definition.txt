@@ -1,0 +1,28 @@
+The problem:
+----------------
+When industry entities implement cloud based container orchestrated solutions via Kubernetes, clusters are built on vitrual machines known as cluster nodes.
+Each cluster node has a CPU, Memory and pod count capacity, depending on the virtual machine specification. 
+The specification of each cluster node and the amount of cluster nodes making up the cluster is completely up to the industry entity, but the higher the node specification and node count, the higher the cost
+Then with the cluster in place, and as pods start getting deployed there is a constant tug-of-war between pod deployments and minimizing cluster resources
+Autoscaling is one of the most common approaches to utilizing cluster resources in an efficient way. You can scale in two directions, horizontally with HPA and vertically with VPA.
+However both VPA and HPA cant be used simultaneously on the same metrics. This is unfortunate, in particular where we want to minimize both CPU and Memory usage as much as possible
+Also, the formulas used to scale both horizontally and vertically are geared towards satisfying QoS related constraints in a reactive wway. (e.g. idempotent ecommerce bulk uploads)
+Whereas in many industry ecosystems, applications that have very predictive resource usage over time and also are not QoS constrained
+There is a gap in the literature focusing on a hybrid approach for autoscaling in Kubernetes which is fully focused on resource consumption minimization. 
+Furthermore for applications that have predictive resource usage over time, this study aims to proactively predict workloads ahead of time, and then set scaling jobs to react to predicted workload
+This work will demonstrate this by implementing a novel kubernetes hybrid autoscaler called SmartScaler
+
+
+
+Horizontal Scaling Inefficiencies
+-------------------------------------
+Can I demonstrate the problem with horizontal and vertical scaling?
+Horizontal scaling uses a reactive based formula to calculate the number of desired replicas
+
+	desiredReplicas = ceil[currentReplicas * ( currentMetricValue / desiredMetricValue )]
+
+For applications that have predictive resource usage over time, this reactive formula is not the most efficient from a resource usage perspective.
+We want to scale proactively ahead of time in a planned manner, using a formula/process that minimizes cost by maximiseing resource usage
+
+Vertical Scaling Inefficiencies
+-------------------------------------

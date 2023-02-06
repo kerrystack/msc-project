@@ -1,7 +1,8 @@
 Scope:
 -------
 Edge case of the pods being down when we attempt to get statistics, in this case we could try to do a redeployment - but too much work and off topic for this project in my view
-for simplicity purposes, we will keep the hybrid autoscaler pod as a singl epod
+for simplicity purposes, we will keep the hybrid autoscaler pod as a single pod
+
 
 Hybrid AutoScaler
 ------------------
@@ -11,6 +12,43 @@ Keep it simple, single point of failure
 Have a database backend (most likely redis)
 Will use labels in pods ro
 
+Scheduler
+--------------
+Two approaches here:
+
+1. Container (may use quartz scheduler here) 
+2. Could look at jobs scheduling in K8s
+
+Probably thinking service here (as we will need polling etc)
+
+Statistics Collector
+--------------------
+A few approaches here, but mainly
+1. Exec into pod and use cgroups to get raw memory and CPU calculations
+2. Use metrics server
+Probably will use metrics server - seems to be the defacto approach
+Will save metrics to the database
+
+Statistics Predictor
+----------------------
+Some AI technology
+May have to use python here due to libraries available
+Or could use a simple raw algorithm (average over 3 days for example)
+Will predict a day of metrics (based on previous 3 days) and save to the database
+Prediction algorithm will have to work for both vertical and horizontal scaling
+
+Job Scaling Creator
+--------------------
+This looks at the prediction for the day ahead of time and then creates necessary scaling jobs to cater for metric fluctuations
+Creates the jobs and saves to database
+The scheduler will poll frequently (every few seconds for example)
+
+Autoscaler Display
+---------------------
+Would be nice to have some UI that displays the following:
+ - Stats of current pods over the last few days
+ - Scaling jobs executed (and ready to execute)
+ - Predicted stats
 
 Data Layer:
 ------------
