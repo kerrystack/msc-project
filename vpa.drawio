@@ -1,20 +1,20 @@
-<mxfile host="app.diagrams.net" modified="2023-03-04T21:24:19.652Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="jc3ypUs7MueRdmimfQuP" version="20.8.23" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-04T22:07:54.816Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="RFHQpJ0MvOMVJuznsvMS" version="20.8.23" type="github">
   <diagram name="Page-1" id="jc2M-WlmoJxvr903Y05k">
-    <mxGraphModel dx="1434" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="796" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="LU-75ut4EFQWjjtrpcfp-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="340" y="190" width="210" height="190" as="geometry" />
+          <mxGeometry x="570" y="132.5" width="190" height="130" as="geometry" />
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-2" value="&lt;b&gt;Control Plane&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="390" y="200" width="110" height="30" as="geometry" />
+          <mxGeometry x="620" y="137.5" width="110" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-3" value="HPA Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;" vertex="1" parent="1">
-          <mxGeometry x="400" y="310" width="90" height="50" as="geometry" />
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-3" value="VPA Admission Controller" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;" vertex="1" parent="1">
+          <mxGeometry x="630" y="192.5" width="100" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-4" value="Ad hoc control loop (every 15 seconds by default), querying metrics api server for metric data" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="320" y="390" width="115" height="80" as="geometry" />
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-4" value="VPA recommender provides pod resource recommendations based on metrics and VPA resource" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="645" y="542.5" width="140" height="125" as="geometry" />
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-5" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="885" y="210" width="280" height="190" as="geometry" />
@@ -23,13 +23,10 @@
           <mxGeometry x="1005" y="220" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-7" value="Pod 1" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="990" y="250" width="45" height="20" as="geometry" />
+          <mxGeometry x="900" y="310" width="45" height="20" as="geometry" />
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-8" value="Pod 2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="990" y="300" width="45" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-9" value="Pod 3" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="990" y="350" width="45" height="20" as="geometry" />
+          <mxGeometry x="960" y="310" width="45" height="20" as="geometry" />
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-10" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="1045" y="275" width="114" height="115" as="geometry" />
@@ -40,98 +37,28 @@
         <mxCell id="LU-75ut4EFQWjjtrpcfp-12" value="cAdvisor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;" vertex="1" parent="1">
           <mxGeometry x="1065" y="320" width="84" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-13" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;rotation=90;" vertex="1" parent="1">
-          <mxGeometry x="870" y="295" width="110" height="50" as="geometry" />
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-13" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="900" y="225" width="110" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-15" value="Deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=90;" vertex="1" parent="1">
-          <mxGeometry x="885" y="310" width="115" height="20" as="geometry" />
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-15" value="Deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="900" y="230" width="115" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-16" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="885" y="430" width="280" height="190" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-17" value="&lt;b&gt;Worker Node 2&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1005" y="440" width="110" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-18" value="Pod 1" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="990" y="470" width="45" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-19" value="Pod 2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="990" y="520" width="45" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-20" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1045" y="495" width="114" height="115" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-21" value="&lt;b&gt;kubelet&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="1065" y="510" width="74" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-22" value="cAdvisor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;" vertex="1" parent="1">
-          <mxGeometry x="1065" y="540" width="84" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-23" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;rotation=90;" vertex="1" parent="1">
-          <mxGeometry x="870" y="515" width="110" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-25" value="Deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=90;" vertex="1" parent="1">
-          <mxGeometry x="885" y="530" width="115" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-32" value="A scale subresource that belongs to a deployment resource is used by the HPA Controller to set replica count and examine current state" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="140" y="500" width="146" height="120" as="geometry" />
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-32" value="A devops administrator configures the VPA by creating a VPA resource" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="667.5" width="90" height="120" as="geometry" />
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-33" value="The metrics API server queries kubelets cAdvisor process on each cluster node to gather metrics and aggregate them for querying" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="435" y="590" width="145" height="100" as="geometry" />
+          <mxGeometry x="932.5" y="615" width="145" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-34" value="The HPA Controller can set the replica count to a new value if scaling in or out is detected. It uses a basic ratio algorithm between desired metrics and current metrics to figure this out" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="1">
-          <mxGeometry x="80" y="60" width="285" height="65" as="geometry" />
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-34" value="The VPA Admission Controller updates pods specifications with new request and limit settings&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="769" y="137.5" width="170" height="65" as="geometry" />
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-36" value="KUBERNETES CLUSTER" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="360" y="110" width="190" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-37" value="With HPA, pod replicas get added (scaled out) or removed (scaled in) action dictated by the HPV" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="920" y="140" width="170" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-38" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" target="LU-75ut4EFQWjjtrpcfp-7">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="950" y="320" as="sourcePoint" />
-            <mxPoint x="1000" y="270" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-39" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-15" target="LU-75ut4EFQWjjtrpcfp-8">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="960" y="330" as="sourcePoint" />
-            <mxPoint x="1000" y="275" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-40" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-15" target="LU-75ut4EFQWjjtrpcfp-9">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="970" y="340" as="sourcePoint" />
-            <mxPoint x="1010" y="285" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-41" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-25" target="LU-75ut4EFQWjjtrpcfp-18">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="980" y="350" as="sourcePoint" />
-            <mxPoint x="1230" y="390" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-42" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-25" target="LU-75ut4EFQWjjtrpcfp-19">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="990" y="360" as="sourcePoint" />
-            <mxPoint x="1030" y="305" as="targetPoint" />
-          </mxGeometry>
+          <mxGeometry x="560" y="90" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-26" value="Metrics API &lt;br&gt;Server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="680" y="495" width="90" height="90" as="geometry" />
+          <mxGeometry x="740" y="730" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-46" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-26" target="LU-75ut4EFQWjjtrpcfp-22">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="810" y="650" as="sourcePoint" />
-            <mxPoint x="860" y="600" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="860" y="650" />
-              <mxPoint x="950" y="600" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-47" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.389;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-26" target="LU-75ut4EFQWjjtrpcfp-12">
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-47" value="" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-26" target="LU-75ut4EFQWjjtrpcfp-12">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="810" y="480" as="sourcePoint" />
             <mxPoint x="860" y="430" as="targetPoint" />
@@ -142,22 +69,140 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-48" value="VPA Recommender" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="640" y="360" width="90" height="80" as="geometry" />
+          <mxGeometry x="737" y="490" width="90" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-49" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-26">
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-49" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-26" target="LU-75ut4EFQWjjtrpcfp-48">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="700" y="430" as="sourcePoint" />
             <mxPoint x="710" y="440" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="LU-75ut4EFQWjjtrpcfp-50" value="VPA Resource" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="570" y="500" width="90" height="80" as="geometry" />
+          <mxGeometry x="590" y="505" width="90" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="LU-75ut4EFQWjjtrpcfp-51" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-50" target="LU-75ut4EFQWjjtrpcfp-48">
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-51" value="" style="endArrow=classic;html=1;rounded=0;startArrow=block;startFill=1;" edge="1" parent="1" target="LU-75ut4EFQWjjtrpcfp-48">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="700" y="495" as="sourcePoint" />
+            <mxPoint x="680" y="530" as="sourcePoint" />
             <mxPoint x="700" y="440" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-53" value="" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="642.5" width="25" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-54" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-53" target="LU-75ut4EFQWjjtrpcfp-50">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="645" y="515" as="sourcePoint" />
+            <mxPoint x="673" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-55" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-50" target="LU-75ut4EFQWjjtrpcfp-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="645" y="515" as="sourcePoint" />
+            <mxPoint x="480" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-57" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-13" target="LU-75ut4EFQWjjtrpcfp-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="963" y="550" as="sourcePoint" />
+            <mxPoint x="1000" y="495" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-58" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-13" target="LU-75ut4EFQWjjtrpcfp-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="965" y="280" as="sourcePoint" />
+            <mxPoint x="933" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-59" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="879" y="410" width="280" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-60" value="&lt;b&gt;Worker Node 1&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="999" y="420" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-61" value="Pod 1" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="894" y="510" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-62" value="Pod 2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="954" y="510" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-63" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1039" y="475" width="114" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-64" value="&lt;b&gt;kubelet&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1059" y="490" width="74" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-65" value="cAdvisor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;" vertex="1" parent="1">
+          <mxGeometry x="1059" y="520" width="84" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-66" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3B3B3;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="894" y="425" width="110" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-67" value="Deployment" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="894" y="430" width="115" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-68" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-66" target="LU-75ut4EFQWjjtrpcfp-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="957" y="750" as="sourcePoint" />
+            <mxPoint x="994" y="695" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-69" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-66" target="LU-75ut4EFQWjjtrpcfp-62">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="959" y="480" as="sourcePoint" />
+            <mxPoint x="927" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-70" value="" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-26" target="LU-75ut4EFQWjjtrpcfp-65">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="790" y="618" as="sourcePoint" />
+            <mxPoint x="1070" y="562" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="870" y="660" />
+              <mxPoint x="960" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-71" value="VPA Updater" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="400" width="90" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-72" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=-0.011;entryY=0.662;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-50" target="LU-75ut4EFQWjjtrpcfp-71">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="440" as="sourcePoint" />
+            <mxPoint x="750" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-74" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-71" target="LU-75ut4EFQWjjtrpcfp-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="770" y="480" as="sourcePoint" />
+            <mxPoint x="820" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-77" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-71" target="LU-75ut4EFQWjjtrpcfp-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1190" y="80" as="sourcePoint" />
+            <mxPoint x="1307" y="197" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-78" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-3" target="LU-75ut4EFQWjjtrpcfp-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="403" as="sourcePoint" />
+            <mxPoint x="910" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-79" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;dashed=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LU-75ut4EFQWjjtrpcfp-3" target="LU-75ut4EFQWjjtrpcfp-61">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="255" as="sourcePoint" />
+            <mxPoint x="910" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-80" value="VPA Updater kills pods that do not fall within VPA recommendation range" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="290" width="100" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-81" value="Deployments create pods that have been deleted, and this action will kick off the VPA Admission controller during pod creation" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="999" y="132.5" width="170" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="LU-75ut4EFQWjjtrpcfp-83" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="520" y="80" width="710" height="750" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
