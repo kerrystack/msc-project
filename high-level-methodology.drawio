@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-03-30T21:12:56.509Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="uLwDDLWOHC-IKMkWGZgu" version="21.0.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-03-30T21:33:26.179Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="XLmxALRiGfxESLzMXoe3" version="21.0.6" type="github">
   <diagram name="Page-1" id="opCAps49XlbFDxHDwFat">
     <mxGraphModel dx="1434" dy="1965" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -25,7 +25,7 @@
         <mxCell id="JSCxkRJU8CovMFVd58zb-7" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 13px;&quot;&gt;Kubernetes Cluster&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="455" y="-65" width="165" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="JSCxkRJU8CovMFVd58zb-9" value="Real world e-commerce load and event simulation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="JSCxkRJU8CovMFVd58zb-9" value="Real world e-commerce load and event simulation (duo constant mode)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="140" y="-65" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="JSCxkRJU8CovMFVd58zb-10" value="&lt;b&gt;Hybrid Autoscaler&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
@@ -133,7 +133,7 @@
         <mxCell id="JSCxkRJU8CovMFVd58zb-43" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 13px;&quot;&gt;Kubernetes Cluster&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="561.25" y="650" width="165" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="JSCxkRJU8CovMFVd58zb-44" value="Real world e-commerce load and event simulation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="JSCxkRJU8CovMFVd58zb-44" value="Real world e-commerce load and event simulation (duo constant mode)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="150" y="615" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="JSCxkRJU8CovMFVd58zb-45" value="&lt;b&gt;Vertical Pod Autoscaler&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
@@ -199,7 +199,7 @@
         <mxCell id="JSCxkRJU8CovMFVd58zb-92" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 13px;&quot;&gt;Kubernetes Cluster&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="1491.25" y="685" width="165" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="JSCxkRJU8CovMFVd58zb-93" value="Real world e-commerce load and event simulation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+        <mxCell id="JSCxkRJU8CovMFVd58zb-93" value="Real world e-commerce load and event simulation (duo constant mode)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="1080" y="650" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="JSCxkRJU8CovMFVd58zb-94" value="&lt;b&gt;Horizontal Pod Autoscaler&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
