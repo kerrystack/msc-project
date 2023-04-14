@@ -1,0 +1,74 @@
+﻿# 1. build cluster, takes approximate 10-15 minutes
+cd "C:\D\msc_project\msc-project\provision-eks-cluster"
+terraform plan
+terraform apply
+
+# 2. set kube config to cluster name
+aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
+
+# 3. Install prometheus with Grafana (ref here: https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+helm install prometheus-stack prometheus-community/kube-prometheus-stack
+
+# 4. Port forward for grafana
+kubectl port-forward deploy/prometheus-stack-grafana 8080:3000
+kubectl port-forward svc/prometheus-stack-kube-prom-prometheus 9090
+
+# 5. Deploy metrics server
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+See https://github.com/kubernetes-sigs/metrics-server#readme
+
+# 6. Login to Grafana
+browse to http://localhost:8080
+username: admin
+password: prom-operator (see https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml)
+
+# 7. Deploy a sample app
+cd C:\D\msc_project\msc-project\experiments
+kubectl apply -f .\deployment.yml
+kubectl apply -f .\service.yml
+kubectl apply -f .\servicemonitor.yml
+Setup service monitor, See https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md#deploying-a-sample-application
+
+# 8. Port forward for new app
+kubectl port-forward deploy/php-apache 8001:80
+
+# 9. Check app up and running:
+Curl GET http://localhost:8001
+
+# 10 Create the HorizontalPodAutoscaler
+See https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+
+# Check/Watch hpa status
+kubectl get hpa
+kubectl get hpa php-apache --watch
+kubectl get deployment php-apache
+
+# TODO: Autoscaling on multiple metrics and custom metrics
+# TODO: Tidy up program separating load from test verification
+# TODO: Finish date range application to data
+
+
+important, taking research objectives and mapping to experiments that can be run
+simple into more complex
+first pass - automate this
+
+how long doesit run for, what conditions? - load questions
+they are going to change - we are going to run them constantly
+php server? - is it ok?, could be different?
+define experiments on paper - less to more complex
+align steps with research objectives - less complex to more complex (comparing it to how other people did this)
+maj
+interesting observation is whatever ....
+time taken to spin down pods is .....
+format for hypothesis, intent, 
+
+
+
+
+
+
+
+

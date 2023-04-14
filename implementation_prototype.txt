@@ -1,0 +1,7 @@
+Querying grafana
+You can specify a timestamp and a duration, which is effectively a date range
+See here: 
+https://stackoverflow.com/questions/71601718/how-to-find-average-of-metrics-between-two-dates-in-prometheus
+
+avg_over_time(speed[4d] @ 1646431200)
+
