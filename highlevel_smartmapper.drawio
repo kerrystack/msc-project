@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" modified="2023-03-08T08:47:35.974Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" etag="C-6lwmq_rhItBeSePf9Y" version="20.8.23" type="github">
+  <diagram name="Page-1" id="62Mf6xe-v6T0QJqGzmG3">
+    <mxGraphModel dx="1434" dy="1965" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-1" value="Smart Mapper&lt;br&gt;&amp;nbsp;Generic Service" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="860" y="180" width="170" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-4" value="&lt;div&gt;&lt;b&gt;Channel Template Correlation Data Generation Steps:&lt;/b&gt;&lt;br&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Internal user selects two channels and presses Execute Button&lt;/li&gt;&lt;li&gt;Comparison operation executes&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Get data from db for two channels&lt;/li&gt;&lt;li&gt;Execute comparison&lt;/li&gt;&lt;li&gt;Filter out false positives by executing fals positive filtering strategies (boolean values)&lt;/li&gt;&lt;li&gt;Calculate correlation scores&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Displays to user (note that previous disabled/manual correlation mappings will also be displayed)&lt;/span&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;Disable correlation mappings (if required)&lt;/li&gt;&lt;li&gt;Manually correlate mappings (if required)&lt;/li&gt;&lt;li&gt;Manually set threshold (this is optional)&lt;/li&gt;&lt;li&gt;User approves&lt;/li&gt;&lt;li&gt;Data saved&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="250" y="295" width="330" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-5" value="DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="540" y="390" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.145;entryY=0;entryDx=0;entryDy=4.35;entryPerimeter=0;" parent="1" source="H8eGq8-mtpGAeG65xjT5-15" target="H8eGq8-mtpGAeG65xjT5-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="355" y="245" as="sourcePoint" />
+            <mxPoint x="600" y="412.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=22.5;entryPerimeter=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="H8eGq8-mtpGAeG65xjT5-14" target="H8eGq8-mtpGAeG65xjT5-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="380" as="sourcePoint" />
+            <mxPoint x="750" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-8" value="Complete" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.012;entryY=0.094;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="H8eGq8-mtpGAeG65xjT5-8" target="H8eGq8-mtpGAeG65xjT5-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="180" as="sourcePoint" />
+            <mxPoint x="750" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-10" value="&lt;div&gt;Event comes from Complete (TurboTemplate, similar to DefaultMapping suggestor). So this is proactive, not run in a schedule.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="870" y="100" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-11" value="&lt;div&gt;Aim here is to reuse existing backend/UI SmartMapper integration.&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="180" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-12" value="Unicorn" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="90" width="210" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-13" value="&lt;div&gt;FeatureFlag at customer channel level for Seller Driven Cross Channel Suggestor - Event raised is for a customer channel level also&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="870" y="45" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-14" value="Seller Driven Cross Channel Suggestor" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="890" y="290" width="110" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-15" value="Channel Template Correlation Data Generation" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="180" width="125" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-16" value="Complete DB" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="910" y="380" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="H8eGq8-mtpGAeG65xjT5-14" target="H8eGq8-mtpGAeG65xjT5-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="869" y="282" as="sourcePoint" />
+            <mxPoint x="590" y="423" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-18" value="Data is at channel level" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="490" y="275" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-19" value="&lt;div&gt;&lt;b&gt;Possible UI update: &lt;/b&gt;Polling for more than one suggestor to complete?&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="530" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-20" value="&lt;div&gt;&lt;b&gt;Seller Driven Cross Channel Suggestor Steps:&lt;/b&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Ensure correlation data exists for ChannelID (query correlation data store)&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;Ensure seller has an integration that exists for at least one correlation data SourceChannelID (stored proc, will need channelID, customerChannelID for later)&lt;/li&gt;&lt;li&gt;For each field in the sellers field mapping sets for SourceChannelIDs&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Does field exist in correlation data?&lt;/li&gt;&lt;li&gt;Create suggested mappings for that field (confidence score etc)&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Save suggested mappings&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="1000" y="360" width="342.5" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="H8eGq8-mtpGAeG65xjT5-22" value="&lt;b&gt;Migration Maps: (TODO - We need to flesh this out and come up with a solution)&lt;br&gt;&lt;br&gt;&lt;/b&gt;When a template is updated, fieldkeys can change. We should preserve these correlations. For example, if we had a strong correlation between amazon and walmart on walmart&#39;s common|title, but the walmart template is updated to move that field to core|title. We should still maintain that relationship.&lt;b&gt;&lt;br&gt;&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="675" y="520" width="305" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ntzktkTMK_q5G9hIz8---1" value="&lt;div&gt;&lt;b&gt;Event:&lt;/b&gt;&lt;/div&gt;&lt;div&gt;ProfileID: Billys TShirts&lt;/div&gt;&lt;div&gt;CustomerChannelID: Billys TShirts&lt;/div&gt;&lt;div&gt;TargetChannelID: Walmart&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="870" y="-10" width="200" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
