@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ClientApp
+﻿namespace ClientApp
 {
 	public class ResultCreator
 	{
 		public void Create(Dictionary<string, (DateTime FromDate, DateTime ToDate)> parsedResultData)
 		{
+			Console.WriteLine("Starting result creation");
+
 			var resultfilePath = $@"C:\D\msc_project\msc-project\experiments\results\native_horizontal_{DateTime.Now.ToString("yyyyMMddHHmmss")}";
 			double resourceSeconds = 0;
 			using var streamWriter = new StreamWriter(resultfilePath);
@@ -22,6 +18,8 @@ namespace ClientApp
 			}
 
 			streamWriter.WriteLine($"Total Pod Active Seconds:{resourceSeconds}");
+
+			Console.WriteLine("Finished result creation");
 		}
 	}
 }

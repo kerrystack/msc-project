@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.WebUtilities;
+﻿using ClientApp.Models;
+using Microsoft.AspNetCore.WebUtilities;
 using System.Net.Http.Headers;
 
 namespace ClientApp
@@ -12,21 +13,30 @@ namespace ClientApp
 		// This might be what Im looking for
 		//query = "container_cpu_usage_seconds_total{ pod=~\"php.*\"}[1h]";
 
-		public static async Task<string> Get()
+		public static async Task<string> Get(LoadTestResult loadTestResult)
 		{
+			Console.WriteLine("Starting metric retrieval");
+
 			var queryUrl = "http://localhost:9090/api/v1/query";
-			var query = "container_cpu_usage_seconds_total{ pod=~\"php.*\"}[1h]";
+
+			var testDurationInSeconds = (loadTestResult.TestEndCheckpoint - loadTestResult.TestStartCheckpoint).TotalSeconds;
+			var query = $"container_cpu_usage_seconds_total{{ pod=~\"php.*\"}}[{testDurationInSeconds}s]";
 			var client = new HttpClient();
 			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
-			client.DefaultRequestHeaders.Accept.Add(
-					new MediaTypeWithQualityHeaderValue("application/json"));
+			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
 			var queryParameters = new Dictionary<string, string>
 			{
-				["query"] = query
+				["query"] = query,
+				["time"] = loadTestResult.TestEndCheckpoint.ToString("yyyy-MM-ddTHH:mm:ssZ"),
 			};
 
 			var response = await client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters));
-			return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+			var result =  await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+			Console.WriteLine("Finished metric retrieval");
+
+			return result;
 		}
 	}
 }

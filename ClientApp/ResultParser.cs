@@ -1,10 +1,5 @@
 ﻿using ClientApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace ClientApp
 {
@@ -12,6 +7,8 @@ namespace ClientApp
 	{
 		public Dictionary<string, (DateTime FromDate, DateTime ToDate)> Parse(string metricData)
 		{
+			Console.WriteLine("Starting result parsing");
+
 			var experimentResult = new Dictionary<string, (DateTime FromDate, DateTime ToDate)>();
 
 			var rootData = JsonSerializer.Deserialize<Root>(metricData);
@@ -35,6 +32,8 @@ namespace ClientApp
 					experimentResult[result.metric.pod] = new(fromDate, toDate);
 				}
 			}
+
+			Console.WriteLine("Completed result parsing");
 
 			return experimentResult;
 		}
