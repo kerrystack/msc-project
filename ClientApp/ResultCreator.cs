@@ -2,18 +2,21 @@
 {
 	public class ResultCreator
 	{
-		public void Create(Dictionary<string, (DateTime FromDate, DateTime ToDate)> parsedResultData)
+		public void Create(string testUseCaseIdentifier, Dictionary<string, List<(DateTime Date, decimal Value)>> parsedResultData)
 		{
 			Console.WriteLine("Starting result creation");
 
-			var resultfilePath = $@"C:\D\msc_project\msc-project\experiments\results\native_horizontal_{DateTime.Now.ToString("yyyyMMddHHmmss")}";
+			var resultfilePath = $@"C:\D\msc_project\msc-project\experiments\results\{testUseCaseIdentifier}_{DateTime.Now.ToString("yyyyMMddHHmmss")}";
 			double resourceSeconds = 0;
 			using var streamWriter = new StreamWriter(resultfilePath);
 			foreach (var parsedResult in parsedResultData)
 			{
-				streamWriter.WriteLine($"Pod:{parsedResult.Key} active from ({parsedResult.Value.FromDate}) to ({parsedResult.Value.ToDate})");
-				var totalPodSeconds = (parsedResult.Value.ToDate - parsedResult.Value.FromDate).TotalSeconds;
-				streamWriter.WriteLine($"Pod:{parsedResult.Key} active for ({totalPodSeconds}) seconds\n");
+				var fromDate = parsedResult.Value.First().Date;
+				var toDate = parsedResult.Value.Last().Date;
+				var totalPodSeconds = Math.Abs((fromDate - toDate).TotalSeconds);
+
+				streamWriter.WriteLine($"Pod:{parsedResult.Key} active from ({parsedResult.Value.First().Date}) to ({parsedResult.Value.Last().Date}) for ({totalPodSeconds}) seconds");
+	
 				resourceSeconds += totalPodSeconds;
 			}
 

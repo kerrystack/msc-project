@@ -10,6 +10,6 @@ namespace ClientApp.Models
 	{
 		public Metric metric { get; set; }
 
-		public List<object[]> values { get; set; }
+		public List<object> value { get; set; }
 	}
 }
