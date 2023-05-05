@@ -4,7 +4,7 @@ namespace ClientApp
 {
 	public class ScriptExecutor
 	{
-		public void Execute(string path, string loggingSuffix)
+		public void Execute(string path, string loggingSuffix, int sleepInSeconds)
 		{
 			Console.WriteLine($"Starting {loggingSuffix}");
 
@@ -16,7 +16,7 @@ namespace ClientApp
 			};
 			Process.Start(startInfo);
 
-			Thread.Sleep(10000);
+			Thread.Sleep(sleepInSeconds * 1000);
 
 			Console.WriteLine($"Finished {loggingSuffix}");
 		}

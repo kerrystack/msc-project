@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using ClientApp.Models;
+using System.Diagnostics;
 using System.Drawing;
 
 namespace ClientApp
@@ -36,11 +37,12 @@ namespace ClientApp
 				(DateTime.UtcNow.AddSeconds(17), 20)
 			});
 
-			Generate("some_use_case", dictionary, dictionary);
+			Generate(ScalingType.Horizontal, "some_use_case", dictionary, dictionary);
 		}
 
 
 		public void Generate(
+			ScalingType scalingType,
 			string testUseCaseIdentifier,
 			Dictionary<string, List<(DateTime Date, decimal Value)>> cpuInput,
 			Dictionary<string, List<(DateTime Date, decimal Value)>> memoryInput)
@@ -49,10 +51,20 @@ namespace ClientApp
 
 			var plt = new ScottPlot.Plot(800, 400);
 			plt.XLabel("Time (UTC)");
-			plt.YLabel("CPU Usage");
-			plt.XAxis.DateTimeFormat(true);
-			plt.YAxis2.SetSizeLimit(min: 40);
-			plt.Title("Pod CPU Usage over time");
+			if (scalingType == ScalingType.Horizontal)
+			{
+				plt.YLabel("CPU Usage");
+				plt.XAxis.DateTimeFormat(true);
+				plt.YAxis2.SetSizeLimit(min: 40);
+				plt.Title("Pod CPU Usage over time");
+			}
+			else
+			{
+				plt.YLabel("Pod CPU Resource and Limit Values");
+				plt.XAxis.DateTimeFormat(true);
+				plt.YAxis2.SetSizeLimit(min: 40);
+				plt.Title("Pod CPU Resources");
+			}
 
 			foreach (var podIdentifier in cpuInput.Keys)
 			{
@@ -74,10 +86,26 @@ namespace ClientApp
 
 			var plt2 = new ScottPlot.Plot(800, 400);
 			plt2.XLabel("Time (UTC)");
-			plt2.YLabel("Memory Usage");
-			plt2.XAxis.DateTimeFormat(true);
-			plt2.YAxis2.SetSizeLimit(min: 40);
-			plt2.Title("Pod Memory Usage over time");
+
+			if (scalingType == ScalingType.Horizontal)
+			{
+				plt2.YLabel("Memory Usage");
+				plt2.XAxis.DateTimeFormat(true);
+				plt2.YAxis2.SetSizeLimit(min: 40);
+				plt2.Title("Pod Memory Usage over time");
+			}
+			else
+			{
+				plt2.YLabel("Memory Usage");
+				plt2.XAxis.DateTimeFormat(true);
+				plt2.YAxis2.SetSizeLimit(min: 40);
+				plt2.Title("Pod Memory Usage over time");
+
+				plt.YLabel("Pod Memory Resource and Limit Values");
+				plt.XAxis.DateTimeFormat(true);
+				plt.YAxis2.SetSizeLimit(min: 40);
+				plt.Title("Pod Memory Resources");
+			}
 
 			foreach (var podIdentifier in memoryInput.Keys)
 			{
@@ -109,9 +137,10 @@ namespace ClientApp
 			gfx.DrawImage(bmpLegend, bmpPlot.Width, 40);
 			gfx.DrawImage(bmpPlot2, 0, 450);
 			gfx.DrawImage(bmpLegend2, bmpPlot.Width, 490);
-			bmp.Save("MultiPlot.png");
+			
 
-			var filePath = $"{testUseCaseIdentifier}_{DateTime.Now.ToString("yyyyMMddHHmmss")}.png";
+			var filePath = $@"C:\D\msc_project\msc-project\experiments\results\{testUseCaseIdentifier}_{DateTime.Now.ToString("yyyyMMddHHmmss")}.png";
+			bmp.Save(filePath);
 
 			Console.WriteLine("Completed graph generation");
 			Thread.Sleep(1000);

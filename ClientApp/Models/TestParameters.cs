@@ -2,6 +2,10 @@
 {
 	public class TestParameters
 	{
+		public ScalingType ScalingType { get; set; }
+
+		public string PodPrefix { get; set; }
+
 		public string TestUseCaseIdentifier { get; set; }
 
 		public int LowModeSleepInSeconds { get; set; }

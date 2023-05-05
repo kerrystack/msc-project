@@ -16,11 +16,11 @@
 			_memoryStatistics = new Dictionary<string, List<(DateTime Date, decimal Value)>>();
 		}
 
-		public void AddCPUStats(Dictionary<string, List<(DateTime Date, decimal Value)>> subject)
+		public void AddCPUStats(string podPrefix, Dictionary<string, List<(DateTime Date, decimal Value)>> subject)
 		{
 			foreach (var key in subject.Keys)
 			{
-				if(!key.StartsWith("php")) {  continue; }
+				if(!key.StartsWith(podPrefix)) {  continue; }
 
 				if (_cpuStatistics.ContainsKey(key))
 				{
@@ -33,11 +33,11 @@
 			}
 		}
 
-		public void AddMemoryStats(Dictionary<string, List<(DateTime Date, decimal Value)>> subject)
+		public void AddMemoryStats(string podPrefix, Dictionary<string, List<(DateTime Date, decimal Value)>> subject)
 		{
 			foreach (var key in subject.Keys)
 			{
-				if (!key.StartsWith("php")) { continue; }
+				if (!key.StartsWith(podPrefix)) { continue; }
 
 				if (_memoryStatistics.ContainsKey(key))
 				{

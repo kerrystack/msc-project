@@ -1,0 +1,5 @@
+100 * max(
+  rate(container_cpu_usage_seconds_total[5m])
+    / on (container, pod)
+  kube_pod_container_resource_limits{resource="cpu"}
+) by (pod)

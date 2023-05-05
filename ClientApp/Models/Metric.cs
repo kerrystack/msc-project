@@ -26,6 +26,8 @@
 
 		public string node { get; set; }
 
+		public string resource { get; set; }
+
 		public string pod { get; set; }
 
 		public string service { get; set; }
