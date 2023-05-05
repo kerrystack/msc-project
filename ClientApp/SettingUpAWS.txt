@@ -1,0 +1,30 @@
+﻿
+
+
+
+
+
+
+
+// Metrics
+https://stackoverflow.com/questions/63347233/how-to-get-cpu-and-memory-usage-of-pod-in-percentage-using-promethus
+https://gist.github.com/max-rocket-internet/6a05ee757b6587668a1de8a5c177728b
+
+
+// VPA execution
+https://docs.aws.amazon.com/eks/latest/userguide/vertical-pod-autoscaler.html
+https://foxutech.medium.com/vertical-pod-autoscaler-vpa-know-everything-about-it-6a2d7a383268
+https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724
+https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
+https://www.densify.com/kubernetes-autoscaling/kubernetes-vpa/
+
+
+// Issue: Enabling VPA webhook to execute
+See here: https://github.com/kubernetes/autoscaler/issues/1547
+Node group security rules
+https://github.com/terraform-aws-modules/terraform-aws-eks/blob/60cc6d7a14a661a6b1b6b838c42cc057ce6f87aa/node_groups.tf#L93
+Port 8000 for hamster app
+See here: https://github.com/kubernetes/autoscaler/blob/vertical-pod-autoscaler-0.13.0/vertical-pod-autoscaler/deploy/admission-controller-deployment.yaml#L58,L42
+
+// Issue with continuous starting pods in hamster app
+https://github.com/kubernetes/autoscaler/issues/2789

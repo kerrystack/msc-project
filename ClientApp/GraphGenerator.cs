@@ -96,15 +96,10 @@ namespace ClientApp
 			}
 			else
 			{
-				plt2.YLabel("Memory Usage");
+				plt2.YLabel("Pod Memory Resource and Limit Values");
 				plt2.XAxis.DateTimeFormat(true);
 				plt2.YAxis2.SetSizeLimit(min: 40);
-				plt2.Title("Pod Memory Usage over time");
-
-				plt.YLabel("Pod Memory Resource and Limit Values");
-				plt.XAxis.DateTimeFormat(true);
-				plt.YAxis2.SetSizeLimit(min: 40);
-				plt.Title("Pod Memory Resources");
+				plt2.Title("Pod Memory Resources");
 			}
 
 			foreach (var podIdentifier in memoryInput.Keys)

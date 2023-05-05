@@ -41,15 +41,22 @@ namespace ClientApp
 
 			do
 			{
-				var response = await client.GetAsync("http://localhost:8001");
-				var responseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+				try
+				{
+					var response = await client.GetAsync("http://localhost:8001");
+					var responseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-				var printPrefix = sleepInSeconds != 0
-					? $"Low mode, {sleepInSeconds} sleepInSeconds, {DateTime.UtcNow} timestamp, Response body:"
-					: $"High mode, {sleepInSeconds} sleepInSeconds, {DateTime.UtcNow} timestamp, Response body:";
-				Console.WriteLine(printPrefix + responseBody);
+					var printPrefix = sleepInSeconds != 0
+						? $"Low mode, {sleepInSeconds} sleepInSeconds, {DateTime.UtcNow} timestamp, Response body:"
+						: $"High mode, {sleepInSeconds} sleepInSeconds, {DateTime.UtcNow} timestamp, Response body:";
+					Console.WriteLine(printPrefix + responseBody);
 
-				if (sleepInSeconds > 0) { Thread.Sleep(sleepInSeconds * 1000); }
+					if (sleepInSeconds > 0) { Thread.Sleep(sleepInSeconds * 1000); }
+				}
+				catch
+				{
+					int x = 10;
+				}
 			}
 			while (DateTime.UtcNow < endBatchCheckpoint);
 	

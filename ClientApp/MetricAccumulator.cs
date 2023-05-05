@@ -42,11 +42,11 @@ namespace ClientApp
 
 		public void AccumulateForVerticalType(string podPrefix)
 		{
-			var cpuRequests = MetricGetter2.GetResourceCPURequests("nginx-deployment");
-			var cpuLimits = MetricGetter2.GetResourceCPULimits("nginx-deployment");
+			var cpuRequests = MetricGetter2.GetResourceCPURequests(podPrefix);
+			var cpuLimits = MetricGetter2.GetResourceCPULimits(podPrefix);
 
-			var memoryRequests = MetricGetter2.GetResourceMemoryRequests("nginx-deployment");
-			var memoryLimits = MetricGetter2.GetResourceMemoryLimits("nginx-deployment");
+			var memoryRequests = MetricGetter2.GetResourceMemoryRequests(podPrefix);
+			var memoryLimits = MetricGetter2.GetResourceMemoryLimits(podPrefix);
 
 			var cpuRequestMetricData = new ResultParser().Parse(cpuRequests, "-cpu-request");
 			var cpuLimitMetricData = new ResultParser().Parse(cpuLimits, "-cpu-limit");

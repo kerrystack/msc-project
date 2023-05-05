@@ -45,7 +45,10 @@ graphGenerator.Generate(
 
 // Generate usage results
 var resultCreator = new ResultCreator();
-resultCreator.Create(testParameters.TestUseCaseIdentifier, metricsAccumulator.Statistics.CPUStatistics);
+resultCreator.Create(testParameters.ScalingType,
+	testParameters.TestUseCaseIdentifier,
+	metricsAccumulator.Statistics.CPUStatistics,
+	metricsAccumulator.Statistics.MemoryStatistics);
 
 // Teardown test specific actions
 //var teardownScriptPath = $@"C:\D\msc_project\msc-project\ClientApp\{testParameters.TestUseCaseIdentifier}-teardown.ps1";
