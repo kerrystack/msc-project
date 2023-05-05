@@ -15,9 +15,9 @@ testParameters.ScalingType = ScalingType.Vertical;
 testParameters.PodPrefix = "php-apache";
 testParameters.TestUseCaseIdentifier = "vpa_native";
 testParameters.LowModeSleepInSeconds = 10;
-testParameters.TestDurationInSeconds = 180;
+testParameters.TestDurationInSeconds = 600;
 testParameters.HighModeStartingPointInSeconds = 30;
-testParameters.HighModeDurationInSeconds = 120;
+testParameters.HighModeDurationInSeconds = 180;
 testParameters.HighModeThreadCount = 10;
 
 // SetUp test specific actions
