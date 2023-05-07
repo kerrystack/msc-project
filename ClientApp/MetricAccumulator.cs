@@ -31,7 +31,7 @@ namespace ClientApp
 		public void AccumulateForHorizontalType(string podPrefix)
 		{
 			var cpuMetrics = MetricGetter2.GetCPUMetrics();
-			var memoryMetrics = MetricGetter2.GetCPUMetrics();
+			var memoryMetrics = MetricGetter2.GetMemoryMetrics();
 
 			var cpuMetricData = new ResultParser().Parse(cpuMetrics);
 			var memoryMetricData = new ResultParser().Parse(memoryMetrics);

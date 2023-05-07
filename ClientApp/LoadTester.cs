@@ -16,8 +16,12 @@ namespace ClientApp
 			// Execute low load
 			await ExecuteBatchOfRequests(highModeStartCheckpoint, testParameters.LowModeSleepInSeconds);
 
-			// Execute high load
-			await ExecuteBatchOfRequests(highModeEndCheckpoint);
+			for (int i = 0; i < testParameters.HighModeThreadCount; i++)
+			{
+				// Execute high load
+				await ExecuteBatchOfRequests(highModeEndCheckpoint);
+			}
+			
 
 			// Execute low load for remainder
 			await ExecuteBatchOfRequests(testEndCheckpoint, testParameters.LowModeSleepInSeconds);
@@ -53,7 +57,7 @@ namespace ClientApp
 
 					if (sleepInSeconds > 0) { Thread.Sleep(sleepInSeconds * 1000); }
 				}
-				catch
+				catch(Exception ex)
 				{
 					int x = 10;
 				}

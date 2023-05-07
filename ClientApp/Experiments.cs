@@ -4,6 +4,36 @@ namespace ClientApp
 {
 	internal static class Experiments
 	{
+		public static TestParameters hpa_native_default()
+		{
+			return new TestParameters()
+			{
+				ScalingType = ScalingType.Horizontal,
+				PodPrefix = "php-apache",
+				TestUseCaseIdentifier = "hpa_native_default",
+				LowModeSleepInSeconds = 10,
+				TestDurationInSeconds = 240,
+				HighModeStartingPointInSeconds = 30,
+				HighModeDurationInSeconds = 120,
+				HighModeThreadCount = 5
+			};
+		}
+		public static TestParameters hpa_native_high_mode_only()
+		{
+			return new TestParameters()
+			{
+				ScalingType = ScalingType.Horizontal,
+				PodPrefix = "php-apache",
+				TestUseCaseIdentifier = "hpa_native_high_mode_only",
+				LowModeSleepInSeconds = 10,
+				TestDurationInSeconds = 600,
+				HighModeStartingPointInSeconds = 30,
+				HighModeDurationInSeconds = 480,
+				HighModeThreadCount = 10
+			};
+		}
+
+
 		public static TestParameters vpa_native_default()
 		{
 			return new TestParameters()

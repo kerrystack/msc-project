@@ -10,8 +10,7 @@ using ClientApp.Models;
 //testParameters.HighModeDurationInSeconds = 120;
 //testParameters.HighModeThreadCount = 10;
 
-//var testParameters = Experiments.vpa_native_default();
-var testParameters = Experiments.vpa_native_low_mode_only_scale_down();
+var testParameters = Experiments.hpa_native_default();
 
 // SetUp test specific actions
 var setupScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\setup.ps1";
