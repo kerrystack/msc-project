@@ -2,7 +2,7 @@
 #See https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 
 write-host "1. Moved control to correct folder"
-cd C:\D\msc_project\msc-project\experiments\vpa_native
+cd C:\D\msc_project\msc-project\experiments\vpa_native_default
 
 write-host "2. Applying deployment"
 kubectl apply -f deployment.yml

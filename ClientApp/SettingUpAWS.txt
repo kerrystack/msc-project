@@ -1,6 +1,8 @@
 ﻿
 
-
+// Links
+https://github.com/kerrystack/msc-project/tree/main/experiments
+https://www.overleaf.com/project/63d19b4b7af7943802fac5e1
 
 
 
@@ -28,3 +30,6 @@ See here: https://github.com/kubernetes/autoscaler/blob/vertical-pod-autoscaler-
 
 // Issue with continuous starting pods in hamster app
 https://github.com/kubernetes/autoscaler/issues/2789
+
+// Removing VPA from kube state metrics
+https://github.com/kubernetes/kube-state-metrics/commit/cef8c1fa4c3f9d7e3b4501e26496eeed8d36a6e1

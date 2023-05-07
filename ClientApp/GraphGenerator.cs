@@ -1,4 +1,5 @@
 ﻿using ClientApp.Models;
+using ScottPlot;
 using System.Diagnostics;
 using System.Drawing;
 
@@ -37,13 +38,15 @@ namespace ClientApp
 				(DateTime.UtcNow.AddSeconds(17), 20)
 			});
 
-			Generate(ScalingType.Horizontal, "some_use_case", dictionary, dictionary);
+			//Generate(ScalingType.Horizontal, "some_use_case", dictionary, dictionary);
 		}
 
 
 		public void Generate(
 			ScalingType scalingType,
 			string testUseCaseIdentifier,
+			DateTime highModeStartCheckpoint,
+			DateTime highModeEndCheckpoint,
 			Dictionary<string, List<(DateTime Date, decimal Value)>> cpuInput,
 			Dictionary<string, List<(DateTime Date, decimal Value)>> memoryInput)
 		{
@@ -65,6 +68,9 @@ namespace ClientApp
 				plt.YAxis2.SetSizeLimit(min: 40);
 				plt.Title("Pod CPU Resources");
 			}
+
+			plt.AddVerticalLine(x: highModeStartCheckpoint.ToOADate(), color: Color.Magenta, width: 3, style: LineStyle.Dot);
+			plt.AddVerticalLine(x: highModeEndCheckpoint.ToOADate(), color: Color.Magenta, width: 3, style: LineStyle.Dot);
 
 			foreach (var podIdentifier in cpuInput.Keys)
 			{
@@ -101,6 +107,9 @@ namespace ClientApp
 				plt2.YAxis2.SetSizeLimit(min: 40);
 				plt2.Title("Pod Memory Resources");
 			}
+
+			plt2.AddVerticalLine(x: highModeStartCheckpoint.ToOADate(), color: Color.Magenta, width: 3, style: LineStyle.Dot);
+			plt2.AddVerticalLine(x: highModeEndCheckpoint.ToOADate(), color: Color.Magenta, width: 3, style: LineStyle.Dot);
 
 			foreach (var podIdentifier in memoryInput.Keys)
 			{

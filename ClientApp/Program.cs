@@ -13,7 +13,7 @@ using ClientApp.Models;
 var testParameters = new TestParameters();
 testParameters.ScalingType = ScalingType.Vertical;
 testParameters.PodPrefix = "php-apache";
-testParameters.TestUseCaseIdentifier = "vpa_native";
+testParameters.TestUseCaseIdentifier = "vpa_native_default";
 testParameters.LowModeSleepInSeconds = 10;
 testParameters.TestDurationInSeconds = 600;
 testParameters.HighModeStartingPointInSeconds = 30;
@@ -40,6 +40,8 @@ var graphGenerator = new GraphGenerator();
 graphGenerator.Generate(
 	testParameters.ScalingType,
 	testParameters.TestUseCaseIdentifier,
+	loadTestResult.HighModeStartCheckpoint,
+	loadTestResult.HighModeEndCheckpoint,
 	metricsAccumulator.Statistics.CPUStatistics,
 	metricsAccumulator.Statistics.MemoryStatistics);
 
