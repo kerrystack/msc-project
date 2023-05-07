@@ -10,15 +10,8 @@ using ClientApp.Models;
 //testParameters.HighModeDurationInSeconds = 120;
 //testParameters.HighModeThreadCount = 10;
 
-var testParameters = new TestParameters();
-testParameters.ScalingType = ScalingType.Vertical;
-testParameters.PodPrefix = "php-apache";
-testParameters.TestUseCaseIdentifier = "vpa_native_default";
-testParameters.LowModeSleepInSeconds = 10;
-testParameters.TestDurationInSeconds = 600;
-testParameters.HighModeStartingPointInSeconds = 30;
-testParameters.HighModeDurationInSeconds = 180;
-testParameters.HighModeThreadCount = 10;
+//var testParameters = Experiments.vpa_native_default();
+var testParameters = Experiments.vpa_native_low_mode_only_scale_down();
 
 // SetUp test specific actions
 var setupScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\setup.ps1";

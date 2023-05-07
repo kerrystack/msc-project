@@ -79,7 +79,7 @@ namespace ClientApp
 			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
 			var result = response.Content.ReadAsStringAsync().Result;
 
-			Console.WriteLine($"Memory metrics retrieved @ {DateTime.UtcNow}");
+			Console.WriteLine($"Resource CPU metrics retrieved @ {DateTime.UtcNow}");
 
 			return result;
 		}
@@ -103,7 +103,7 @@ namespace ClientApp
 			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
 			var result = response.Content.ReadAsStringAsync().Result;
 
-			Console.WriteLine($"Memory metrics retrieved @ {DateTime.UtcNow}");
+			Console.WriteLine($"Resource memory metrics retrieved @ {DateTime.UtcNow}");
 
 			return result;
 		}
@@ -127,7 +127,7 @@ namespace ClientApp
 			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
 			var result = response.Content.ReadAsStringAsync().Result;
 
-			Console.WriteLine($"Memory metrics retrieved @ {DateTime.UtcNow}");
+			Console.WriteLine($"CPU Limit metrics retrieved @ {DateTime.UtcNow}");
 
 			return result;
 		}
