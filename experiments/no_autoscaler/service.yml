@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: php-apache
+  name: php-apache
+spec:
+  ports:
+  - name: web
+    port: 80
+  selector:
+    run: php-apache
+  sessionAffinity: None
+  type: NodePort

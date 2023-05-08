@@ -1,6 +1,6 @@
 ﻿using ClientApp;
 
-var testParameters = Experiments.hpa_native_high_mode_only();
+var testParameters = Experiments.no_autoscaler();
 
 // SetUp test specific actions
 var setupScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\setup.ps1";
@@ -16,9 +16,9 @@ Task task = Task.Run(() => metricsAccumulator.Accumulate(testParameters.ScalingT
 
 // Executing load
 var executeLoadScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\execute-load.ps1";
-new ScriptExecutor().Execute(executeLoadScriptPath, "executing load", 600);
+new ScriptExecutor().Execute(executeLoadScriptPath, "executing load", testParameters.TestDurationInSeconds);
 
-var testStartCheckpoint = DateTime.UtcNow.AddSeconds(-600);
+var testStartCheckpoint = DateTime.UtcNow.AddSeconds(-testParameters.TestDurationInSeconds);
 var highModeStartCheckpoint = testStartCheckpoint.AddSeconds(testParameters.HighModeStartingPointInSeconds);
 var highModeEndCheckpoint = highModeStartCheckpoint.AddSeconds(testParameters.HighModeDurationInSeconds);
 

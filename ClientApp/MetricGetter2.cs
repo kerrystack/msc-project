@@ -16,7 +16,7 @@ namespace ClientApp
 		{
 			var queryUrl = "http://localhost:9090/api/v1/query";
 
-			var query = $"100 * max(rate(container_cpu_usage_seconds_total[5m]) / on(container, pod) kube_pod_container_resource_limits{{ resource = \"cpu\"}}) by(pod)";
+			var query = $"100 * max(rate(container_cpu_usage_seconds_total[1m]) / on(container, pod) kube_pod_container_resource_limits{{ resource = \"cpu\"}}) by(pod)";
 
 			var client = new HttpClient();
 			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
