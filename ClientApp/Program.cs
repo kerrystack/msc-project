@@ -1,6 +1,6 @@
 ﻿using ClientApp;
 
-var testParameters = Experiments.no_autoscaler();
+var testParameters = Experiments.vpa_hpa_same_time();
 
 // SetUp test specific actions
 var setupScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\setup.ps1";

@@ -1,0 +1,40 @@
+Pod:php-apache-74f98ccd6c-ctdbs
+ - FromDate:07/05/2023 12:08:49
+ - ToDate:07/05/2023 12:11:22
+ - TotalPodSeconds:153
+ - CPURequest:0.005
+ - CPULimit:0.25
+ - MemoryRequest:5242880
+ - MemoryLimit:262144000
+
+
+Pod:php-apache-74f98ccd6c-2b82w
+ - FromDate:07/05/2023 12:08:49
+ - ToDate:07/05/2023 12:10:20
+ - TotalPodSeconds:91
+ - CPURequest:0.005
+ - CPULimit:0.25
+ - MemoryRequest:5242880
+ - MemoryLimit:262144000
+
+
+Pod:php-apache-74f98ccd6c-gqssc
+ - FromDate:07/05/2023 12:10:31
+ - ToDate:07/05/2023 12:18:46
+ - TotalPodSeconds:495
+ - CPURequest:0.025
+ - CPULimit:1.25
+ - MemoryRequest:262144000
+ - MemoryLimit:13107200000
+
+
+Pod:php-apache-74f98ccd6c-r6jqc
+ - FromDate:07/05/2023 12:11:33
+ - ToDate:07/05/2023 12:18:46
+ - TotalPodSeconds:433
+ - CPURequest:0.025
+ - CPULimit:1.25
+ - MemoryRequest:262144000
+ - MemoryLimit:13107200000
+
+

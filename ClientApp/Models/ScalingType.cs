@@ -3,6 +3,7 @@
 	public enum ScalingType
 	{
 		Horizontal,
-		Vertical
+		Vertical,
+		Both
 	}
 }
