@@ -1,0 +1,31 @@
+Pod:php-apache-5bfc96dc4c-85lzc
+ - FromDate:08/05/2023 12:10:58
+ - ToDate:08/05/2023 12:20:23
+ - TotalPodSeconds:565
+
+
+Pod:php-apache-5bfc96dc4c-lfd4b
+ - FromDate:08/05/2023 12:12:23
+ - ToDate:08/05/2023 12:20:23
+ - TotalPodSeconds:480
+
+
+Pod:php-apache-5bfc96dc4c-9vgd8
+ - FromDate:08/05/2023 12:13:16
+ - ToDate:08/05/2023 12:20:23
+ - TotalPodSeconds:427
+
+
+Pod:php-apache-5bfc96dc4c-bdxg2
+ - FromDate:08/05/2023 12:13:16
+ - ToDate:08/05/2023 12:20:23
+ - TotalPodSeconds:427
+
+
+Pod:php-apache-5bfc96dc4c-bbphw
+ - FromDate:08/05/2023 12:13:16
+ - ToDate:08/05/2023 12:20:23
+ - TotalPodSeconds:427
+
+
+Total Pod Active Seconds:2326

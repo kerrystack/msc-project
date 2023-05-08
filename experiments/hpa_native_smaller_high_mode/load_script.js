@@ -12,16 +12,16 @@ export const options = {
 		high_mode: {
 			executor: 'constant-vus',
 			vus: 50,
-			duration: '3m',
+			duration: '90s',
 			gracefulStop: '0s',
 			startTime: '1m',
 		},
 		low_mode_end: {
 			executor: 'constant-vus',
 			vus: 1,
-			duration: '6m',
+			duration: '450s',
 			gracefulStop: '0s',
-			startTime: '4m',
+			startTime: '150s',
 		},
 	},
 }

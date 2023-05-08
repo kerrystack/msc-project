@@ -12,12 +12,30 @@ namespace ClientApp
 				PodPrefix = "php-apache",
 				TestUseCaseIdentifier = "hpa_native_default",
 				LowModeSleepInSeconds = 1,
-				TestDurationInSeconds = 240,
+				TestDurationInSeconds = 600,
 				HighModeStartingPointInSeconds = 60,
-				HighModeDurationInSeconds = 120,
+				HighModeDurationInSeconds = 180,
 				HighModeThreadCount = 50
 			};
 		}
+
+		public static TestParameters hpa_native_smaller_high_mode()
+		{
+			return new TestParameters()
+			{
+				ScalingType = ScalingType.Horizontal,
+				PodPrefix = "php-apache",
+				TestUseCaseIdentifier = "hpa_native_smaller_high_mode",
+				LowModeSleepInSeconds = 1,
+				TestDurationInSeconds = 600,
+				HighModeStartingPointInSeconds = 60,
+				HighModeDurationInSeconds = 90,
+				HighModeThreadCount = 50
+			};
+		}
+
+
+
 		public static TestParameters hpa_native_high_mode_only()
 		{
 			return new TestParameters()

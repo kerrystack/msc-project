@@ -14,14 +14,14 @@ spec:
     spec:
       containers:
       - name: php-apache
-        image: registry.k8s.io/hpa-example
+        image: nginx
         ports:
         - name: web
           containerPort: 80
         resources:
           requests:
-            memory: 50Mi
-            cpu: 50m
+            memory: 3Mi
+            cpu: 3m
           limits:
-            memory: 100Mi
-            cpu: 100m
+            memory: 15Mi
+            cpu: 15m

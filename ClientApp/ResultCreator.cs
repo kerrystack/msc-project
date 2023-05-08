@@ -12,14 +12,14 @@ namespace ClientApp
 		{
 			if(scalingType == ScalingType.Horizontal)
 			{
-				CreateForHoriontal(testUseCaseIdentifier, cpuResultData);
+				CreateForHorizontal(testUseCaseIdentifier, cpuResultData);
 			}
 			else
 			{
 				CreateForVertical(testUseCaseIdentifier, cpuResultData, memoryResultData);
 			}
 		}
-		private void CreateForHoriontal(
+		private void CreateForHorizontal(
 			string testUseCaseIdentifier,
 			Dictionary<string, List<(DateTime Date, decimal Value)>> cpuResultData)
 		{

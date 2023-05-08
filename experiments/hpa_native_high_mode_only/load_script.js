@@ -6,22 +6,22 @@ export const options = {
 		low_mode_start: {
 			executor: 'constant-vus',
 			vus: 1,
-			duration: '1m',
+			duration: '30s',
 			gracefulStop: '0s',
 		},
 		high_mode: {
 			executor: 'constant-vus',
 			vus: 50,
-			duration: '3m',
+			duration: '8m',
 			gracefulStop: '0s',
-			startTime: '1m',
+			startTime: '30s',
 		},
 		low_mode_end: {
 			executor: 'constant-vus',
 			vus: 1,
-			duration: '6m',
+			duration: '90s',
 			gracefulStop: '0s',
-			startTime: '4m',
+			startTime: '510s',
 		},
 	},
 }
