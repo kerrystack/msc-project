@@ -1,14 +1,4 @@
 ﻿using ClientApp;
-using ClientApp.Models;
-
-//var testParameters = new TestParameters();
-//testParameters.ScalingType = ScalingType.Horizontal;
-//testParameters.TestUseCaseIdentifier = "uc-horizontal-native-cpu-only";
-//testParameters.LowModeSleepInSeconds = 10;
-//testParameters.TestDurationInSeconds = 240;
-//testParameters.HighModeStartingPointInSeconds = 30;
-//testParameters.HighModeDurationInSeconds = 120;
-//testParameters.HighModeThreadCount = 10;
 
 var testParameters = Experiments.hpa_native_default();
 
@@ -24,16 +14,21 @@ new ScriptExecutor().Execute(createAutoscalerScriptPath, "create autoscaler spec
 var metricsAccumulator = new MetricAccumulator();
 Task task = Task.Run(() => metricsAccumulator.Accumulate(testParameters.ScalingType, testParameters.PodPrefix, 10));
 
-// Execute load
-var loadTestResult = await new LoadTester().ExecuteLoad(testParameters);
+// Executing load
+var executeLoadScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\execute-load.ps1";
+new ScriptExecutor().Execute(executeLoadScriptPath, "executing load", 360);
+
+var testStartCheckpoint = DateTime.UtcNow.AddSeconds(-360);
+var highModeStartCheckpoint = testStartCheckpoint.AddSeconds(testParameters.HighModeStartingPointInSeconds);
+var highModeEndCheckpoint = highModeStartCheckpoint.AddSeconds(testParameters.HighModeDurationInSeconds);
 
 // Generate graph
 var graphGenerator = new GraphGenerator();
 graphGenerator.Generate(
 	testParameters.ScalingType,
 	testParameters.TestUseCaseIdentifier,
-	loadTestResult.HighModeStartCheckpoint,
-	loadTestResult.HighModeEndCheckpoint,
+	highModeStartCheckpoint,
+	highModeEndCheckpoint,
 	metricsAccumulator.Statistics.CPUStatistics,
 	metricsAccumulator.Statistics.MemoryStatistics);
 

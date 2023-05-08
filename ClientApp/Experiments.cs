@@ -11,11 +11,11 @@ namespace ClientApp
 				ScalingType = ScalingType.Horizontal,
 				PodPrefix = "php-apache",
 				TestUseCaseIdentifier = "hpa_native_default",
-				LowModeSleepInSeconds = 10,
+				LowModeSleepInSeconds = 1,
 				TestDurationInSeconds = 240,
-				HighModeStartingPointInSeconds = 30,
+				HighModeStartingPointInSeconds = 60,
 				HighModeDurationInSeconds = 120,
-				HighModeThreadCount = 5
+				HighModeThreadCount = 50
 			};
 		}
 		public static TestParameters hpa_native_high_mode_only()

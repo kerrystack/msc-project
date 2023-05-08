@@ -19,7 +19,7 @@ export const options = {
 		low_mode_end: {
 			executor: 'constant-vus',
 			vus: 1,
-			duration: '1m',
+			duration: '3m',
 			gracefulStop: '0s',
 			startTime: '3m',
 		},
