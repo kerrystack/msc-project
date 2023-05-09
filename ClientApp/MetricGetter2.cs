@@ -16,7 +16,9 @@ namespace ClientApp
 		{
 			var queryUrl = "http://localhost:9090/api/v1/query";
 
-			var query = $"100 * max(rate(container_cpu_usage_seconds_total[1m]) / on(container, pod) kube_pod_container_resource_limits{{ resource = \"cpu\"}}) by(pod)";
+			//var query = $"100 * max(rate(container_cpu_usage_seconds_total[1m]) / on(container, pod) kube_pod_container_resource_limits{{ resource = \"cpu\"}}) by(pod)";
+			//query = "100 * max(rate(container_cpu_usage_seconds_total[5m]) / on(container, pod) label_replace(kube_pod_container_resource_limits{ resource = \"cpu\"}, \"pod\", \"$1\", \"exported_pod\", \"(.+)\") ) by(pod)";
+			var query = $"rate(container_cpu_usage_seconds_total{{pod=~\"php-.*\", image=~\"docker.io/library/nginx:.*\", container_name != \"POD\"}}[5m])";
 
 			var client = new HttpClient();
 			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
@@ -40,7 +42,8 @@ namespace ClientApp
 		{
 			var queryUrl = "http://localhost:9090/api/v1/query";
 
-			var query = $"100 * max(container_memory_working_set_bytes / on(container, pod) kube_pod_container_resource_limits{{ resource = \"memory\" }}) by(pod)";
+			//var query = $"100 * max(container_memory_working_set_bytes / on(container, pod) kube_pod_container_resource_limits{{ resource = \"memory\" }}) by(pod)";
+			var query = $"rate(container_memory_working_set_bytes{{pod=~\"php-.*\", image=~\"docker.io/library/nginx:.*\", container_name != \"POD\"}}[5m])";
 
 			var client = new HttpClient();
 			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");

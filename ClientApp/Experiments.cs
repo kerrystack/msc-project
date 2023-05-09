@@ -18,6 +18,7 @@ namespace ClientApp
 				HighModeThreadCount = 50
 			};
 		}
+
 		public static TestParameters vpa_hpa_same_time()
 		{
 			return new TestParameters()
@@ -72,11 +73,11 @@ namespace ClientApp
 				ScalingType = ScalingType.Horizontal,
 				PodPrefix = "php-apache",
 				TestUseCaseIdentifier = "hpa_native_high_mode_only",
-				LowModeSleepInSeconds = 10,
+				LowModeSleepInSeconds = 1,
 				TestDurationInSeconds = 600,
 				HighModeStartingPointInSeconds = 30,
 				HighModeDurationInSeconds = 480,
-				HighModeThreadCount = 10
+				HighModeThreadCount = 50
 			};
 		}
 		public static TestParameters hpa_native_low_mode_only()

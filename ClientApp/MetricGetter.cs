@@ -23,6 +23,7 @@ namespace ClientApp
 			var query = $"container_cpu_usage_seconds_total{{ pod=~\"php.*\"}}[{testDurationInSeconds}s]";
 
 
+
 			var client = new HttpClient();
 			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
 			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
