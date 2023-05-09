@@ -4,25 +4,18 @@ using System.Net.Http.Headers;
 
 namespace ClientApp
 {
+	/// <summary>
+	/// https://stackoverflow.com/questions/63347233/how-to-get-cpu-and-memory-usage-of-pod-in-percentage-using-promethus
+	/// </summary>
 	public class MetricGetter
 	{
-		//var queryUrl = "http://localhost:9090/api/v1/query";
-		//// var query = "avg_over_time(container_cpu_usage_seconds_total{pod_name='<pod-name>'}[5m]) * 100"; // Query for pod CPU usage as a percentage
-		//var query = "rate(container_cpu_usage_seconds_total{pod=~\"example.*\"}[5m])";
-		//query = "sum(rate(container_cpu_usage_seconds_total{container!~\"POD|\"}[1m])) by (pod)";
-		// This might be what Im looking for
-		//query = "container_cpu_usage_seconds_total{ pod=~\"php.*\"}[1h]";
-
-		public static async Task<string> GetCPUMetrics(LoadTestResult loadTestResult)
+		public static string GetCPUMetrics()
 		{
-			Console.WriteLine("Starting metric retrieval");
-
 			var queryUrl = "http://localhost:9090/api/v1/query";
 
-			var testDurationInSeconds = (loadTestResult.TestEndCheckpoint - loadTestResult.TestStartCheckpoint).TotalSeconds;
-			var query = $"container_cpu_usage_seconds_total{{ pod=~\"php.*\"}}[{testDurationInSeconds}s]";
-
-
+			//var query = $"100 * max(rate(container_cpu_usage_seconds_total[1m]) / on(container, pod) kube_pod_container_resource_limits{{ resource = \"cpu\"}}) by(pod)";
+			//query = "100 * max(rate(container_cpu_usage_seconds_total[5m]) / on(container, pod) label_replace(kube_pod_container_resource_limits{ resource = \"cpu\"}, \"pod\", \"$1\", \"exported_pod\", \"(.+)\") ) by(pod)";
+			var query = $"rate(container_cpu_usage_seconds_total{{pod=~\"php-.*\", image=~\"docker.io/library/nginx:.*\", container_name != \"POD\"}}[5m])";
 
 			var client = new HttpClient();
 			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
@@ -31,26 +24,23 @@ namespace ClientApp
 			var queryParameters = new Dictionary<string, string>
 			{
 				["query"] = query,
-				["time"] = loadTestResult.TestEndCheckpoint.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+				["time"] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
 			};
 
-			var response = await client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters));
-			var result =  await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
+			var result = response.Content.ReadAsStringAsync().Result;
 
-			Console.WriteLine("Finished metric retrieval");
+			Console.WriteLine($"CPU metrics retrieved @ {DateTime.UtcNow}");
 
 			return result;
 		}
 
-		public static async Task<string> GetMemoryMetrics(LoadTestResult loadTestResult)
+		public static string GetMemoryMetrics()
 		{
-			Console.WriteLine("Starting metric retrieval");
-
 			var queryUrl = "http://localhost:9090/api/v1/query";
 
-			var testDurationInSeconds = (loadTestResult.TestEndCheckpoint - loadTestResult.TestStartCheckpoint).TotalSeconds;
-			var query = $"container_memory_working_set_bytes{{ container=~ \"php-apache\"}}[{testDurationInSeconds}s]";
-
+			//var query = $"100 * max(container_memory_working_set_bytes / on(container, pod) kube_pod_container_resource_limits{{ resource = \"memory\" }}) by(pod)";
+			var query = $"rate(container_memory_working_set_bytes{{pod=~\"php-.*\", image=~\"docker.io/library/nginx:.*\", container_name != \"POD\"}}[5m])";
 
 			var client = new HttpClient();
 			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
@@ -59,13 +49,109 @@ namespace ClientApp
 			var queryParameters = new Dictionary<string, string>
 			{
 				["query"] = query,
-				["time"] = loadTestResult.TestEndCheckpoint.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+				["time"] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
 			};
 
-			var response = await client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters));
-			var result = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
+			var result = response.Content.ReadAsStringAsync().Result;
 
-			Console.WriteLine("Finished metric retrieval");
+			Console.WriteLine($"Memory metrics retrieved @ {DateTime.UtcNow}");
+
+			return result;
+		}
+
+		public static string GetResourceCPURequests(string podPrefix)
+		{
+			var queryUrl = "http://localhost:9090/api/v1/query";
+
+			var query = $"kube_pod_container_resource_requests{{pod=~\"{podPrefix}.*\", resource=\"cpu\"}}";
+
+			var client = new HttpClient();
+			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
+			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+			var queryParameters = new Dictionary<string, string>
+			{
+				["query"] = query,
+				["time"] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+			};
+
+			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
+			var result = response.Content.ReadAsStringAsync().Result;
+
+			Console.WriteLine($"Resource CPU metrics retrieved @ {DateTime.UtcNow}");
+
+			return result;
+		}
+
+		public static string GetResourceMemoryRequests(string podPrefix)
+		{
+			var queryUrl = "http://localhost:9090/api/v1/query";
+
+			var query = $"kube_pod_container_resource_requests{{pod =~\"{podPrefix}.*\", resource=\"memory\"}}";
+
+			var client = new HttpClient();
+			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
+			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+			var queryParameters = new Dictionary<string, string>
+			{
+				["query"] = query,
+				["time"] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+			};
+
+			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
+			var result = response.Content.ReadAsStringAsync().Result;
+
+			Console.WriteLine($"Resource memory metrics retrieved @ {DateTime.UtcNow}");
+
+			return result;
+		}
+
+		public static string GetResourceCPULimits(string podPrefix)
+		{
+			var queryUrl = "http://localhost:9090/api/v1/query";
+
+			var query = $"kube_pod_container_resource_limits{{pod =~\"{podPrefix}.*\", resource=\"cpu\"}}";
+
+			var client = new HttpClient();
+			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
+			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+			var queryParameters = new Dictionary<string, string>
+			{
+				["query"] = query,
+				["time"] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+			};
+
+			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
+			var result = response.Content.ReadAsStringAsync().Result;
+
+			Console.WriteLine($"CPU Limit metrics retrieved @ {DateTime.UtcNow}");
+
+			return result;
+		}
+
+		public static string GetResourceMemoryLimits(string podPrefix)
+		{
+			var queryUrl = "http://localhost:9090/api/v1/query";
+
+			var query = $"kube_pod_container_resource_limits{{pod =~\"{podPrefix}.*\", resource=\"memory\"}}";
+
+			var client = new HttpClient();
+			client.BaseAddress = new Uri("http://localhost:9090/api/v1/query");
+			client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+			var queryParameters = new Dictionary<string, string>
+			{
+				["query"] = query,
+				["time"] = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ"),
+			};
+
+			var response = client.GetAsync(QueryHelpers.AddQueryString(queryUrl, queryParameters)).Result;
+			var result = response.Content.ReadAsStringAsync().Result;
+
+			Console.WriteLine($"Memory metrics retrieved @ {DateTime.UtcNow}");
 
 			return result;
 		}

@@ -30,8 +30,8 @@ namespace ClientApp
 
 		public void AccumulateForHorizontalType(string podPrefix)
 		{
-			var cpuMetrics = MetricGetter2.GetCPUMetrics();
-			var memoryMetrics = MetricGetter2.GetMemoryMetrics();
+			var cpuMetrics = MetricGetter.GetCPUMetrics();
+			var memoryMetrics = MetricGetter.GetMemoryMetrics();
 
 			var cpuMetricData = new ResultParser().Parse(cpuMetrics);
 			var memoryMetricData = new ResultParser().Parse(memoryMetrics);
@@ -42,11 +42,11 @@ namespace ClientApp
 
 		public void AccumulateForVerticalType(string podPrefix)
 		{
-			var cpuRequests = MetricGetter2.GetResourceCPURequests(podPrefix);
-			var cpuLimits = MetricGetter2.GetResourceCPULimits(podPrefix);
+			var cpuRequests = MetricGetter.GetResourceCPURequests(podPrefix);
+			var cpuLimits = MetricGetter.GetResourceCPULimits(podPrefix);
 
-			var memoryRequests = MetricGetter2.GetResourceMemoryRequests(podPrefix);
-			var memoryLimits = MetricGetter2.GetResourceMemoryLimits(podPrefix);
+			var memoryRequests = MetricGetter.GetResourceMemoryRequests(podPrefix);
+			var memoryLimits = MetricGetter.GetResourceMemoryLimits(podPrefix);
 
 			var cpuRequestMetricData = new ResultParser().Parse(cpuRequests, "-cpu-request");
 			var cpuLimitMetricData = new ResultParser().Parse(cpuLimits, "-cpu-limit");
