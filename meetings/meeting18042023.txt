@@ -1,0 +1,21 @@
+Comparable to other work, forms a baseline
+Answer the 
+Nothing for the use cases 
+Listing those experiments and the variance of what Im investigating
+Automate it - plot results (Thats starting point)
+We need that working so we can start other things quickly
+What are you limiting it to (I am being specific) - needs to be reviewed and tested - 
+Set protocol now (hypothesis, run it)
+Review the results
+Create a visual that correlates number of pods with number of requests
+We will tear apart the experiments (pytho script) (legend)
+
+experiment1 - correlation between horizontal pods
+ - configuration
+ - parameters
+have hierarchy depicted) - common configuration details
+
+experimental protocol
+hypothesis
+
+No es un buen comienzo

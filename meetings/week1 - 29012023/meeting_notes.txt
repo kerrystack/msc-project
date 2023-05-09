@@ -1,0 +1,45 @@
+Core problems
+-----------------
+Good reasons for sending in bulk - just the issue?
+Dont over focus on a particular solution at point in tim
+need a good problem definition - capacity to demonstrate this problem
+good to differentiate from work - abstract the problem
+build an mvp - how difficult it is to do?
+base system to demonstrate the work
+stick with free tier - model the problem
+where are the pain points in the process
+all for reading up on theory - cost functions
+
+technical competency
+theoretical - generating the abstract description of problem and factors of the problem
+
+
+week 1 mvp (fail and fail fast)
+you have applied problem. demonstrate how 
+focus more on the problem - 
+
+try to develop the problem statement, break it down (there could be smaller questions to each of them
+ - specify what
+
+
+create an overleaf project
+share the project with ruari
+access to document?
+
+zotoro
+bibliography mamangment????
+org
+
+lit review - no point discussing yet
+ruairi 
+it will take a day to do this?
+
+
+next week
+ - get bitsand pieces setup (send on report)
+ - try to rewrite the problem (workflow perspective 2 or 3 issues - focus on some of it), understand what each means
+ - play around with free tier k8s thing
+ - line chart - fake application ()
+
+
+

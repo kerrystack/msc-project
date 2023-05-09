@@ -1,0 +1,60 @@
+root//Shop Categories//Holidays & Occasions//Fall//Fall Party & Baking//Fall Party Supplies
+root//Shop Categories//Holidays & Occasions//Fall//Fall Baking & Party//Fall Party Supplies
+
+
+
+Can I demonstrate the problem with horizontal and vertical scaling
+Focus on one problem - e.g. vertical (see what limitations are?)
+Simple workflow to automate as much as possible) (Veritical scaling in Kubernets lis limited by blah blah blah)
+ - tHE RE are a number of potential solutions
+
+Look at vertical scaling problem
+Look at horizontal scaling problem (in isolation)
+Break the problem down
+Dont ignore the ones in isolation (they could be more informative)
+
+Might loook at research in isolation?
+
+Specify the types of applications in previous studies?
+Taxconomy of sample applications
+
+Mapping out apps, wht they are
+Why the require hor and vert
+In isolation will help
+Why it needs compute, 
+
+
+
+
+2 things:
+
+Practical
+------------
+1. Get that cluster up and running to focus on existing infra, get comfortable - 
+ - Be cognisant of solutions that are available (look at pre-canned solutions)
+ -Get comfortable
+
+Theoritical
+----------------
+Concentrate on top box
+Review existing papers, what methodology did they use
+Here is their use case - sample application
+Hes is sample apps
+Here is increase in volume
+Here is how they are pulling metrics etc?
+Response time?
+
+Table that captures this work - study
+Commonality across different study
+Are the result comparable across them?
+Common things found are good, should influence how I 
+
+Start writing
+
+Do we have a definition of a kubernetes cluster? etc
+We need to define exactly what we are looking at
+When looking at papers, look at contribution, challenges, what was the reason
+
+
+
+

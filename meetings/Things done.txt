@@ -1,0 +1,4 @@
+Things done:
+ - Completely rewrote Metrics (for both CPU and Memory)
+ - Created a Metrics Accumulator to collect metrics while load is executing (works as background thread)
+ - Graph Renderer (all graphs lenends not set as separate bitmap)

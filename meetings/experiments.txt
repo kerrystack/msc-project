@@ -1,0 +1,13 @@
+testParameters.ScalingType = ScalingType.Vertical;
+testParameters.PodPrefix = "php-apache";
+testParameters.TestUseCaseIdentifier = "vpa_native_default";
+testParameters.LowModeSleepInSeconds = 10;
+testParameters.TestDurationInSeconds = 600;
+testParameters.HighModeStartingPointInSeconds = 30;
+testParameters.HighModeDurationInSeconds = 180;
+testParameters.HighModeThreadCount = 10;
+
+request memory: 5mi
+request cpu: 5m
+limit memory: 250mi
+limit cpu: 250m

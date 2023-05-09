@@ -1,0 +1,43 @@
+Problem Definition
+------------------
+HPAs and VPAs cannot be used simultaneously on the same metrics as they conflict each other. You can only use if they are based on different metrics
+HPAs and VPAs are based on reactive autoscaling
+Make more efficient use of resources be retrospectively looking at metrics data and the proactively implementaing a scaling plan for a defined period of time
+
+
+Implementation
+	Environment
+	-------------
+	- AWS using t2.micro node specifications (maybe too small) 
+	- might require t3.mediums and have to pay for them for demo purposes
+	- Need to test this out, stable env important
+
+	Hybrid AutoScaler
+	--------------------
+ 	- The "Hybrid AutoScaler" is actually an application deployed as a pod in the cluster itself
+ 	- I was thinking can we try to have a hybrid autosclaer that scales out or up depending on the following 3 factors:
+ 		- CPU
+ 		- Memory
+ 		- Threads of execution
+	- Will require a prediction mechanism:
+		- Will execute one a day, creating a proactive scaling plan for the next day, based on the 3 previous days
+		- Will use some AI algorithm to predict the graph for the next day for the given metric in question
+		- Will create scaling changes as part of a proactive scaling plan, using an inhouse algorithm
+
+
+	Sample Application
+	--------------------
+ 	- We will need a sample application. This application will need to have the following:
+		- A consistent load for a predictably recurring period of time (multiple threads of execution)
+		- A spike in CPU and Memory due to a process intensive job for a predictably recurring period of time (single thread of execution)
+		- We need enhanced metrics to expose threads of execution (.net siodecar container approach) for example
+		- We might want prometheus here (or some other graphing techology) to graph metrics for example
+		- Will require a load runner to generate load patterns
+
+
+
+
+ - Possible diagram required here
+
+
+

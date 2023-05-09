@@ -1,0 +1,23 @@
+Define everything
+Never make the reader feel stupid
+Brief description of all terms!
+
+INTRODUCTION
+Background information
+Good to add a "sell" - e.g. market has grown good to do this
+Growth of containerization
+Build motivation for problem we are going to describe
+What do we want at the end of abstract
+ - People using this
+ - Limitation with vertical and horizontal scaling
+ - Motivation
+
+Go through abstract, find all terms
+Tecnhincal references for online tools (online)
+If you are making any strong statements (reference it to back it up)
+If you are giving a definition - add as a reference
+
+Expand the introduction
+Contextualize related work I have
+
+ 

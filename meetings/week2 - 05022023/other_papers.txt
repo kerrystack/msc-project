@@ -1,0 +1,135 @@
+[7] S. Wang, Z. Ding, and C. Jiang, “Elastic scheduling for microservice applications
+in clouds,” IEEE Transactions on Parallel and Distributed Systems, vol. 32, no. 1,
+pp. 98–115, 2021.
+
+Elastic Scheduling for Microservice Applications in Clouds
+ - To this end, this article proposes an Elastic Scheduling for Microservices (ESMS) that integrates task scheduling with auto-scaling.
+ - Not relevant for me
+
+[13] Z. Ding and Q. Huang, “Copa: A combined autoscaling method for kubernetes,” in
+2021 IEEE International Conference on Web Services (ICWS), 2021, pp. 416–425
+
+COPA: A Combined Autoscaling Method for Kubernetes
+https://ieeexplore.ieee.org/document/9590262
+Uses the following metrics:
+ - microservice performance data
+ - real-time workload
+ - expected response time
+ - microservice instances scheme
+
+COPA uses the queuing network model to calculate a combined scaling scheme that aims to minimize the default cost and resource cost. We evaluated our approach in a Kubernetes cluster, and compare it with existing state-of-the-art autoscaling methods under four different workload types. Such experiments show a reduction of ×1.22 for resource cost while ensuring the QoS as compared to the baseline method.
+Approach evaluated in a K8S cluster
+
+Although horizontal scaling and vertical scaling are currently widely used in various scenarios, the two scaling modes themselves have certain limitations. 
+Horizontal scaling needs to set the supply of resources for each instance in advance. A high resource usage rate cannot be guaranteed sometimes; 
+The problem with vertical scaling is that microservice instances have a performance ceiling that does not grow indefinitely as the supply of resources increases, and the supply of instance resources is limited by resources of the Node in which the instance is located.
+
+Before autoscaling the microservice, COPA first collects and obtains the performance data of the microservice application. After obtaining the necessary performance data, COPA recommends an optimal combined scaling scheme based on the realtime workload, the expected response time, and microservice instances scheme at runtime (the number of replicas, allocated CPU, and memory currently), using the queuing network M/M/c model. Finally, in order to avoid frequent execution of scaling, COPA decides whether it is necessary to perform scaling. We also designed and implemented a COPA prototype. Compared with the state-of-the-art autoscaling methods, the resource cost is reduced by 22% while guaranteeing the QoS.
+
+real-time workload and expected response time to determine the optimal horizontal scaling and vertical scaling simultaneously. IMPORTANT!!!!!
+Formalize the resource costs according to whether rolling updates are used or not by referring to existing business models.
+Implement and verify the proposed method in a Kuber-netes cluster, and compare it with the baseline scaling methods under four different workload types
+
+The function and responsibility of HPA are to adjust the number of Pods according to user preset metrics and scaling strategies during runtime; Instead of changing the number of Pods, VPA adjusts the supply of Pod resources according to the past period of historical data. CA is oriented to Node. When Kubernetes cannot deploy and schedule Pods to existing Nodes, CA will be used to increase the number of Nodes.
+
+Most of the recent studies focus on a single scaling mode. There are few studies on combined autoscaling for Kubernetes. Although Libra combines vertical scaling and horizontal scaling, vertical scaling and horizontal scaling are phased, so the optimal scaling scheme could not be determined simultaneously. Therefore, we propose a novel combined autoscaling method in this paper. When dealing with real-time workloads, the optimal vertical scaling and horizontal scaling are determined simultaneously, guaranteeing the QoS and optimizes the resource cost.
+
+Different types of workload
+ - Gentle type
+ - Burst type
+ - Rise type
+ - Decline type
+
+We are only concerned with Burst type (and predictive)
+
+again uses real K8s cluster
+
+The experiment was carried out on the v 1.17 Kubernetes cluster, and the Docker version was 19.03.13. The cluster contains six Nodes and one Master. Each Node was configured with 4vCPU and 4G memory, the Master was configured with 8vCPU, 16G memory, and the CPU of the Master and Nodes were Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz.
+
+Even though the startup speed of the container is now significantly better than that of VMs, these short few seconds will still affect the QoS to a certain extent. Thus, in future work, we will introduce workload predictions, turn reactive scaling into proactive scaling, and execute scaling operations in advance to further improve the QoS of microservices.
+
+[14]
+
+The primary purpose of this work is to present an on-premise architecture based on Kubernetes and Docker containers aimed at improving QoS regarding resource usage and service level objectives (SLOs). The main contribution of this proposal is its dynamic autoscaling capabilities to adjust system resources to the current workload while improving QoS.
+Not using future prediction ahead of time
+
+
+New Content
+-----------------
+https://ieeexplore.ieee.org/document/9955300
+Reinforcement Learning based Autoscaling for Kafka-centric Microservices in Kubernetes
+This paper proposes a new autoscaling policy, which scales Kafka-centric microservices deployed in an eventdriven deployment architecture, using a Reinforcement Learning model.
+E. Predictive and Reactive Autoscaling
+This model supports two types of Autoscaling.
+Predictive autoscaling – In this method, autoscaling decision is based on the time series data and the output of the ML model. Based on this, the number of replicas is decided and HPA scales the publisher and consumer pods accordingly.
+Reactive autoscaling – In this method, autoscaling decisions are based on the preset threshold for the number of messages that reaches the publisher pods
+
+D. Custom Metrics Analyzer
+Custom Metrics Analyzer analyzes the time series data using the ML model such as Reinforcement Learning (RL) for continuous learning of the application request analytics. Long Short-Term Memory (LSTM) is used to predict the number of requests in the future and uses Reinforcement Learning (RL) to decide the optimal action of scale-in or scale-out.
+
+Definitely using a K8s environment
+Time series storgae provided by Prometheus - I could do the same here to be honest!
+
+Can HPA scale based on Prometheus metrics???? - I need to look at this
+Horizontal scaling only
+
+
+https://ieeexplore.ieee.org/document/9129886
+Autoscaled RabbitMQ Kubernetes Cluster on single-board computers
+Our experimental results are on a single RabbitMQ Kubernetes cluster that is ready to be introduced in the IoT project.
+
+
+
+
+
+
+Random notes
+--------------------
+see replica count pattern over a number of days
+
+The curren
+Will work on a real K8s cluster
+Very specifically working with burst type (burst on / burst off) where bursts are predictable
+Concerned with resource usage, as this can prove quite costly in clusters, qos less of an issue
+Will know in advance the workload is horizontal or vertical, not interested in solving both, as workloads are usually either one of the other
+Let workloads run for 3 days
+Look at the horizontal autoscaler
+
+
+Vertical
+ - Will look over time (e.g. 3 days) 
+ - Will use differentiation to detect changes i.e. burst starts or burst ends
+ - Will use an average value with buffer to determine to determine "request limit"
+ - Will use an average value with buffer to determine to determine "resource limit"
+ - Will scale on multiple metrics - currently only
+
+Horizontal
+ - Will know the desired count of replicas
+ - Will look over time (e.g. 3 days) 
+ - Will use differentiation to detect changes i.e. burst starts or burst ends
+ - Will use differentiation to detect changes i.e. burst starts or burst ends
+
+will use the current formula:
+	desiredReplicas = ceil[currentReplicas * ( currentMetricValue / desiredMetricValue )]
+but will be setting the desiredMetricValue for both CPU and memory to be quite high
+will also be setting the quiet time to be as efficient as possible by vertically scaling
+
+
+
+
+aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

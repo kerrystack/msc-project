@@ -1,0 +1,36 @@
+TODO List:
+
+Section on constraints in implementation for vertical and horizontal scaling
+Pod count constraints
+Pod size specification constraints
+vpa installation and usage very awkward etc
+talk about resource request limits etc
+didnt concentrate much on memory in the end
+Ref 21 and Ref 22 blank!
+Contrast and compare to other frameworks
+
+
+Experimental analysis
+Put in "discussion" chapter
+move to discussion chapter
+ - what this means
+ - use related work
+ - synopsis of the whole
+
+quantitying ecicacy of current autoscaling strategy
+identify performance gains for particulr organization
+
+significance, consequence, cost
+extrapulate cost (function)
+
+productive with your work
+
+sell, value add, impact of results
+actionable as possible
+actions are our findings
+
+
+
+
+
+

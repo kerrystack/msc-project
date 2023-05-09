@@ -1,0 +1,28 @@
+Creating a new one (overleaf):
+Contextualize???? - Written (Page how it works)
+Grafana (Write paragraph or two in overleaf)
+Proper reference (BibTak) - Describe technologies in chuks of writing
+
+Load simulation
+
+Autoscaling
+Vertical scaling
+Horizontal scaling??????
+
+Do this continually (in isolation)?Research notes?
+Gathering thoughts??????
+So you can come back to it?
+Different metrics available - are they relevant?
+What dictates when we need to scale?
+
+Scenarios to generate when we scale?
+
+Title/Abstract
+/Introduction (Chapter 1)
+Related Work
+Methodology
+
+
+What happends 
+
+

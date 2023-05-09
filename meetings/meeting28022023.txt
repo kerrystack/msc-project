@@ -1,0 +1,46 @@
+Compkete this
+
+Subsection - Research Question?
+High level question related to everything you have described in intro
+Bit of context based on what you have described
+
+Think about that question in  a hierarchical question (breaking question down into smaller parts)
+Getting more specific!
+More specific question on how performat is Kubernetes on autoscaling?
+What are the alternate means of autoscaling
+Where are they appropriate
+What are limitations
+Examples of questions?????
+
+Almost like a guide
+Going from more abstract to specific
+
+
+Opening pieces of related of related work should focus on abstract piece
+How performant is Kubernets for supporting Microservices
+Experiments with 
+
+Summarize the picture in relation to what you have read (Related work)
+ - 
+
+
+Goal: Ensure that you are familiar that metrics that are recorded, know how to measure?
+Contextualize with the priorwork under that light
+Comes out with the later work
+Contextualizing and from that you are identifying the limitations and the methodology
+
+Then when we go onto vertical scaling and horizontal scaling (subscetions)
+Tables are good for comparison
+
+1. Finish the intro (longer version of the abstract - the sell)
+2. Stab at the research questions
+
+If you are doing the related work, capture the methodology!
+Measuring your methododology
+
+How hard would it be to do this?????
+We will base implementation on something others did (same as paper blah)
+
+
+
+

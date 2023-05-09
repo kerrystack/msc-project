@@ -1,0 +1,15 @@
+Focus on Related work
+overview of 4 objectives
+start iof the methodology
+how do people profile applications
+
+ideally your related work would give you a comparator
+summy application - usage pattern, comparing scaling approach against
+
+methodology
+ - Inputs and outputs for autoscaling
+ - Lowever level
+ - Outputs
+How it 
+
+Thinking about implementation
