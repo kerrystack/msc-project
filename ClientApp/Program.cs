@@ -1,10 +1,10 @@
 ﻿using ClientApp;
 
-var testParameters = Experiments.vpa_hpa_same_time();
+var testParameters = Experiments.hpa_native_high_mode_only();
 
 // SetUp test specific actions
 var setupScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\setup.ps1";
-new ScriptExecutor().Execute(setupScriptPath, "setup test specific actions", 40);
+new ScriptExecutor().Execute(setupScriptPath, "setup test specific actions", 25);
 
 // Create autoscaler
 var createAutoscalerScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\create-autoscaler.ps1";
