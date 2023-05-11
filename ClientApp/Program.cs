@@ -1,6 +1,6 @@
 ﻿using ClientApp;
 
-var testParameters = Experiments.hpa_native_high_mode_only();
+var testParameters = Experiments.hpa_native_low_mode_only();
 
 // SetUp test specific actions
 var setupScriptPath = $@"C:\D\msc_project\msc-project\experiments\{testParameters.TestUseCaseIdentifier}\setup.ps1";

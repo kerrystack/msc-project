@@ -84,7 +84,7 @@ namespace ClientApp
 		{
 			return new TestParameters()
 			{
-				ScalingType = ScalingType.Both,
+				ScalingType = ScalingType.Horizontal,
 				PodPrefix = "php-apache",
 				TestUseCaseIdentifier = "hpa_native_low_mode_only",
 				LowModeSleepInSeconds = 10,
